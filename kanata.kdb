@@ -62,6 +62,7 @@
                                                                 _    _    _
 )
 
+;; NOTE: Custom Layer for using Video Speed Controler Browser extension
 (deflayer navyt
     _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _         _
@@ -78,14 +79,14 @@
     _         _    _    _    _    _    eql  kp7  kp8  kp9  @+   _    _    _
     _         _    _    _    _    _    kp0  kp4  kp5  kp6  @*   _         _
     _         _    _    _    _    _    @.   kp1  kp2  kp3  @^             eql
-    _    _    _    bspc           _              _    _    _    _    _    _
+    _    _    _    _              _              bspc _    _    _    _    _
                                                                 _    _    _
 )
 
 (deflayer sym
     _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _         _
-    _         _    _    _    @&   @!   @#   @|   _    _    _    _    _    _
+    _         _    _    @~   @&   @!   @#   @|   grv  _    _    _    _    _
     _         @<   [    @{   @op  -    @_   @cp  @}   ]    @>   _         _
     _         _    _    _    \    @$   @@   @%   _    _    _              _
     _    _    _    bspc           _              _    _    _    _    _    _
@@ -138,17 +139,16 @@
 
     ~ (fork S-grv (unshift grv) (lsft rsft d k))
 
+    hrt9 (switch
+        ((base-layer qwerty-home-row))   apos break
+        ((base-layer graphite-home-row)) ;    break
+    )
+
     md1 (tap-dance $timeout (
         (tap-hold $tap-time $hold-time esc (layer-toggle nav))
         (layer-toggle navyt)
     ))
-    md2 (tap-hold $tap-time $hold-time 
-        (switch
-            ((base-layer qwerty-home-row))   apos break
-            ((base-layer graphite-home-row)) ;    break
-        )
-        (layer-toggle num)
-    )
+    md2 (tap-dance $timeout ((tap-hold $tap-time $hold-time @hrt9 (layer-toggle num)) @hrt9))
     md3 (tap-hold $tap-time $hold-time rpt (layer-toggle fun))
     md4 (tap-hold $tap-time $hold-time rpt (layer-toggle vim))
     md5 (tap-hold $tap-time $hold-time _   (layer-toggle nav))
