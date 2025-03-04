@@ -62,17 +62,6 @@
                                                                 _    _    _
 )
 
-;; NOTE: Custom Layer for using Video Speed Controler Browser extension
-(deflayer navyt
-    _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
-    _    _    _    _    _    _    _    _    _    _    _    _    _         _
-    @tb2      q    w    e    r    _    _    _    _    _    _    _    _    _
-    _         a    s    d    f    g    _    _    _    _    _    _         _
-    _         _    _    _    v    b    _    _    _    _    _              _
-    _    _    _    _              _              _    _    _    _    _    _
-                                                                _    _    _
-)
-
 (deflayer num
     _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
     _    @ch8 @ch4 @ch2 @ch1 _    _    _    @ch8 @ch4 @ch2 @ch1 _         _
@@ -110,6 +99,17 @@
     l @rgt
     ; @;
     ' @'
+)
+
+;; NOTE: Custom Layer for using Video Speed Controler Browser extension
+(deflayer navyt
+    _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _         _
+    @tb2      q    w    e    r    _    _    _    _    _    _    _    _    _
+    _         a    s    d    f    g    _    _    _    _    _    _         _
+    _         _    _    _    v    b    _    _    _    _    _              _
+    _    _    _    _              _              _    _    _    _    _    _
+                                                                _    _    _
 )
 
 (defvar
