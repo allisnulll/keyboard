@@ -6,7 +6,7 @@
 
 (defsrc
     esc  f1  f2  f3  f4  f5  f6  f7  f8  f9  f10  f11  f12 home end  ins  del
-    grv  1    2    3    4    5    6    7    8    9    0    min  eql       bspc
+    grv  1    2    3    4    5    6    7    8    9    0    -    =         bspc
     tab       q    w    e    r    t    y    u    i    o    p    [    ]    \
     caps      a    s    d    f    g    h    j    k    l    ;    apos      ent
     lsft      z    x    c    v    b    n    m    ,    .    /              rsft
@@ -62,23 +62,33 @@
                                                                 _    _    _
 )
 
-(deflayer num
-    _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
-    _    @ch8 @ch4 @ch2 @ch1 _    _    _    @ch8 @ch4 @ch2 @ch1 _         _
-    _         _    _    _    _    _    eql  kp7  kp8  kp9  @+   _    _    _
-    _         _    _    _    _    _    kp0  kp4  kp5  kp6  @*   _         _
-    _         _    _    _    _    _    @.   kp1  kp2  kp3  @^             eql
-    _    _    _    _              _              bspc _    _    _    _    _
-                                                                _    _    _
-)
-
 (deflayer sym
     _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _         _
     _         _    _    @~   @&   @!   @#   @|   grv  _    _    _    _    _
     _         @<   [    @{   @op  -    @_   @cp  @}   ]    @>   _         _
-    _         _    _    _    \    @$   @@   @%   _    _    _              _
+    _         =    _    _    \    @$   @@   @%   _    _    =              _
     _    _    _    bspc           _              _    _    _    _    _    _
+                                                                _    _    _
+)
+
+(deflayer num
+    _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         _    _    _    _    _    _    _    _    _    _    _    _    _
+    _         1    2    3    4    5    6    7    8    9    0    _         _
+    _         _    _    _    _    _    _    _    _    _    _              _
+    _    _    _    bspc           _              lsft _    _    _    _    _
+                                                                _    _    _
+)
+
+(deflayer num-pad
+    _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
+    _    @ch8 @ch4 @ch2 @ch1 _    _    _    @ch8 @ch4 @ch2 @ch1 _         _
+    _         _    _    _    _    _    =    kp7  kp8  kp9  @+   _    _    _
+    _         _    _    _    _    _    kp0  kp4  kp5  kp6  @*   _         _
+    _         _    _    _    _    _    @.   kp1  kp2  kp3  @^             _
+    _    _    _    _              _              bspc _    _    _    _    _
                                                                 _    _    _
 )
 
@@ -148,7 +158,10 @@
         (tap-hold $tap-time $hold-time esc (layer-toggle nav))
         (layer-toggle navyt)
     ))
-    md2 (tap-dance $timeout ((tap-hold $tap-time $hold-time @hrt9 (layer-toggle num)) @hrt9))
+    md2 (tap-dance $timeout (
+        (tap-hold $tap-time $hold-time @hrt9 (layer-toggle num))
+        (layer-toggle num-pad)
+    ))
     md3 (tap-hold $tap-time $hold-time rpt (layer-toggle fun))
     md4 (tap-hold $tap-time $hold-time rpt (layer-toggle vim))
     md5 (tap-hold $tap-time $hold-time _   (layer-toggle nav))
@@ -206,7 +219,7 @@
     &  S-7
     |  S-\
     @  S-2
-    _  S-min
+    _  S--  
     %  S-5
     #  S-3
     $  S-4
