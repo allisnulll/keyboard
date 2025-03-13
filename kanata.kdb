@@ -215,14 +215,14 @@
     tb1 C-tab
     tb2 C-S-tab
 
-    !  S-1
+    !  RS-1
     &  S-7
     |  S-\
-    @  S-2
+    @  RS-2
     _  S--  
-    %  S-5
-    #  S-3
-    $  S-4
+    %  RS-5
+    #  RS-3
+    $  RS-4
     <  S-,
     {  S-[
     op S-9
