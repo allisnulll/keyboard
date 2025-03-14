@@ -95,10 +95,10 @@ This is what I change from the vanilla layer to get my home row mods and other c
 ### **Navigation**
 ```
     caps nlck slck _   _   _   _   _   _   _   _   _   _   _    _    _    _
-    @cw  _    ins  up   tab  _    _    _    _    brdn brup vold volu      mute
+    @cw  _    home up   end  _    _    _    _    brdn brup vold volu      mute
     @tb1      tab  left down rght _    _    mwu  mwd  mwl  mwr  prev next pp
-    _         ent  _    home end  _    _    _    _    _    _    _         _
-    _         _    _    pgup pgdn _    _    _    _    _    _              _
+    _         ent  ins  pgup pgdn _    _    _    _    _    _    _         _
+    _         _    _    _    _    _    _    _    _    _    _              _
     _    _    _    del            bspc           _    _    _    _    _    _
                                                                 _    _    _
 ```
