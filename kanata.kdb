@@ -8,7 +8,7 @@
     esc  f1  f2  f3  f4  f5  f6  f7  f8  f9  f10  f11  f12 home end  ins  del
     grv  1    2    3    4    5    6    7    8    9    0    -    =         bspc
     tab       q    w    e    r    t    y    u    i    o    p    [    ]    \
-    caps      a    s    d    f    g    h    j    k    l    ;    apos      ent
+    caps      a    s    d    f    g    h    j    k    l    ;    '         ent
     lsft      z    x    c    v    b    n    m    ,    .    /              rsft
     lctl wkup lmet lalt           spc            ralt prnt rctl pgup up   pgdn
                                                                 left down rght
@@ -17,7 +17,7 @@
 (deflayer graphite-home-row
     _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
     @~   _    _    _    _    _    _    _    _    _    _    _    _         _
-    _         b    l    d    w    z    apos f    o    u    j    _    _    _
+    _         b    l    d    w    z    '    f    o    u    j    _    _    _
     @md1      @hr1 @hr2 @hr3 @hr4 g    y    @hr5 @hr6 @hr7 @hr8 @md2      @md5
     @lsf      q    x    m    c    v    k    p    _    _    _              @rsf
     _    _    _    @md3           _              @md4 _    _    _    _    _
@@ -27,7 +27,7 @@
 (deflayer graphite
     _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
     @~   _    _    _    _    _    _    _    _    _    _    _    _         _
-    _         b    l    d    w    z    apos f    o    u    j    _    _    _
+    _         b    l    d    w    z    '    f    o    u    j    _    _    _
     _         n    r    t    s    g    y    h    a    e    i    ;         _
     _         q    x    m    c    v    k    p    _    _    _              _
     _    _    _    _              _              _    _    _    _    _    _
@@ -150,8 +150,8 @@
     ~ (fork S-grv (unshift grv) (lsft rsft d k))
 
     hrt9 (switch
-        ((base-layer qwerty-home-row))   apos break
-        ((base-layer graphite-home-row)) ;    break
+        ((base-layer qwerty-home-row))   ' break
+        ((base-layer graphite-home-row)) ; break
     )
 
     md1 (tap-dance $timeout (
