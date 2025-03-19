@@ -5,19 +5,19 @@
 )
 
 (defsrc
-    esc   f1   f2   f3   f4     f5   f6   f7   f8     f9   f10  f11  f12   prnt slck brk
-    grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup  nlck kp/  kp*  kp-
-    tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     del  end  pgdn  kp7  kp8  kp9  kp+
+    esc   f1   f2   f3   f4     f5   f6   f7   f8     f9   f10  f11  f12   prnt brk  slck 
+    grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  mute vold volu  nlck kp/  kp*  kp-
+    tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     del  pp   next  kp7  kp8  kp9  kp+
     caps a    s    d    f    g    h    j    k    l    ;    '         ent                   kp4  kp5  kp6
     lsft z    x    c    v    b    n    m    ,    .    /              rsft       up         kp1  kp2  kp3  kprt
-    lctl lmet lalt                 spc                ralt rmet cmp  rctl  left down rght  kp0       kp.
+    lctl lmet lalt                 spc                ralt rmet wkup rctl  left down rght  kp0       kp.
 )
 
 (deflayer graphite-home-row
     _     _    _    _    _      _    _    _    _      _    _    _    _     @hmr @lyt @rst
     @~   _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
     _    b    l    d    w    z    '    f    o    u    j    _    _    _     _    _    _     _    _    _    _
-    @md1 @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      @md3                  _    _    _
+    @md1 @hr1 @hr2 @hr3 @hr4 _    y    @hr5 @hr6 @hr7 @hr8 @md2      @md3                  _    _    _
     @lsf q    x    m    c    v    k    p    _    _    _              @rsf       _          _    _    _    _
     _    _    @md4                 _                  @md5 _    _    _     _    _    _     _         _
 )
@@ -70,7 +70,7 @@
     _     _    _    _    _      _    _    _    _      _    _    _    _     _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
-    _    _    1    2    3    4    5    6    7    8    9    0         _                     _    _    _
+    _    1    2    3    4    5    6    7    8    9    0    _         _                     _    _    _
     _    _    _    _    _    _    _    _    _    _    _              _          _          _    _    _    _
     _    _    bspc                 _                  lsft _    _    _     _    _    _     _         _
 )
@@ -152,9 +152,9 @@
         (tap-hold $tap-time $hold-time @hrt9 (layer-toggle num))
         (layer-toggle num-pad)
     ))
-    md3 (tap-hold $tap-time $hold-time rpt (layer-toggle fun))
-    md4 (tap-hold $tap-time $hold-time rpt (layer-toggle vim))
-    md5 (tap-hold $tap-time $hold-time _   (layer-toggle nav))
+    md3 (tap-hold $tap-time $hold-time _   (layer-toggle nav))
+    md4 (tap-hold $tap-time $hold-time rpt (layer-toggle fun))
+    md5 (tap-hold $tap-time $hold-time rpt (layer-toggle vim))
 
     lsf (tap-hold $tap-time $hold-time (one-shot $long-timeout lsft) (layer-toggle sym))
     rsf (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym))
