@@ -63,7 +63,7 @@ This is what I change from the vanilla layer to get the **Graphite** layout. I l
     _         _    _    _    _    _    _    _    _    _    _    _    _    _
     @md1      @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      @md5
     @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
-    _    _    _    @md3           _              @md4 _    _    _    _    _
+    _    _    @mcw @md3           _              @md4 @mcw _    _    _    _
                                                                 _    _    _
 ```
 This is what I change from the vanilla layer to get my home row mods and other custom mod keys. I am using **[GASC](https://precondition.github.io/home-row-mods#gasc)** home row mods which means the order is *Meta*, *Alt*, *Shift*, and then *Ctrl*.
@@ -91,6 +91,9 @@ This is what I change from the vanilla layer to get my home row mods and other c
 - *lsf & rsf:*
     * **Tap** = One-shot shift
     * **Hold** = sym layer
+- *mcw:*
+    * **Tap** = regular key
+    * **Double-tap** = *cw*
 
 ### **Navigation**
 ```
