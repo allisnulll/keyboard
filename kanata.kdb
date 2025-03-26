@@ -18,9 +18,9 @@
     _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
     @~   _    _    _    _    _    _    _    _    _    _    _    _         _
     _         b    l    d    w    z    '    f    o    u    j    _    _    _
-    @md1      @hr1 @hr2 @hr3 @hr4 g    y    @hr5 @hr6 @hr7 @hr8 @md2      @md5
+    @md1      @hr1 @hr2 @hr3 @hr4 g    y    @hr5 @hr6 @hr7 @hr8 @md2      @md3
     @lsf      q    x    m    c    v    k    p    _    _    _              @rsf
-    _    @mcw @mcw @md3           _              @md4 @mcw @mcw _    _    _
+    _    @mcw @mcw @md4           _              @md5 @mcw @mcw _    _    _
                                                                 _    _    _
 )
 
@@ -38,9 +38,9 @@
     _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
     @~   _    _    _    _    _    _    _    _    _    _    _    _         _
     _         _    _    _    _    _    _    _    _    _    _    _    _    _
-    @md1      @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      @md5
+    @md1      @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      @md3
     @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
-    _    @mcw @mcw @md3           _              @md4 @mcw @mcw _    _    _
+    _    @mcw @mcw @md4           _              @md5 @mcw @mcw _    _    _
                                                                 _    _    _
 )
 
@@ -124,7 +124,8 @@
 
 (defvar
     tap-time     100
-    hold-time    140
+    hold-time    145
+    hold-time2   130
     timeout      300
     long-timeout 3000
 )
@@ -162,9 +163,9 @@
         (tap-hold $tap-time $hold-time @hrt9 (layer-toggle num))
         (layer-toggle num-pad)
     ))
-    md3 (tap-hold $tap-time $hold-time rpt (layer-toggle fun))
-    md4 (tap-hold $tap-time $hold-time rpt (layer-toggle vim))
-    md5 (tap-hold $tap-time $hold-time _   (layer-toggle nav))
+    md3 (tap-hold $tap-time $hold-time2 _   (layer-toggle nav))
+    md4 (tap-hold $tap-time $hold-time rpt (layer-toggle fun))
+    md5 (tap-hold $tap-time $hold-time rpt (layer-toggle vim))
 
     lsf (tap-hold $tap-time $hold-time (one-shot $long-timeout lsft) (layer-toggle sym))
     rsf (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym))
