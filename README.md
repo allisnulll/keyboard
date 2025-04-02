@@ -119,7 +119,7 @@ Provides easy access to navigation keys, as well as other useful keys. Does not 
     _         _    _    _    _    _    _    _    _    _    _    _    _    _
     _         1    2    3    4    5    6    7    8    9    0    _         _
     _         _    _    _    _    _    _    _    _    _    _              _
-    _    _    _    bspc           _              rpt  _    _    _    _    _
+    _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
 Moves the numbers at the top of the keyboard down to your fingers, so you don't have to reach for them. You can use *lsft* to access their symbols if you want to. Home row mods are still usable if you hold them before entering this layer making a lot of shortcuts more convenient, especially ones for switching windows.
@@ -131,7 +131,7 @@ Moves the numbers at the top of the keyboard down to your fingers, so you don't 
     _         _    _    _    _    _    =    kp7  kp8  kp9  @+   _    _    _
     _         _    _    _    _    _    kp0  kp4  kp5  kp6  @*   _         _
     _         _    _    _    _    _    @.   kp1  kp2  kp3  @^             _
-    _    _    _    bspc           _              _    _    _    _    _    _
+    _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
 Numpad with some custom keys.
@@ -148,7 +148,7 @@ Numpad with some custom keys.
     _         _    _    @~   @&   @!   @#   @|   grv  _    _    _    _    _
     _         @<   [    @{   @op  -    @_   @cp  @}   ]    @>   _         _
     _         =    _    _    \    @@   @$   @%   _    _    =              _
-    _    _    _    bspc           _              _    _    _    _    _    _
+    _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
 Symbol layer with access to all the bracket types by finger.
