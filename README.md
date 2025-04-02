@@ -63,7 +63,7 @@ This is what I change from the vanilla layer to get the **Graphite** layout. I l
     _         _    _    _    _    _    _    _    _    _    _    _    _    _
     @md1      @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      @md3
     @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
-    _    @mcw @mcw @md4           _              @md5 @mcw @mcw _    _    _
+    _    _    _    @md4           _              @md5 _    _    _    _    _
                                                                 _    _    _
 ```
 This is what I change from the vanilla layer to get my home row mods and other custom mod keys. I am using **[GASC](https://precondition.github.io/home-row-mods#gasc)** home row mods which means the order is *Meta*, *Alt*, *Shift*, and then *Ctrl*.
@@ -75,6 +75,7 @@ This is what I change from the vanilla layer to get my home row mods and other c
     * **Tap** = esc key
     * **Hold** = nav layer
     * **Double-tap** = custom nav layer
+    * **Shift-tap** = *[cw](#Navigation)*
 - *md2:*
     * **Tap** = regular key
     * **Hold** = num layer
@@ -91,9 +92,6 @@ This is what I change from the vanilla layer to get my home row mods and other c
 - *lsf & rsf:*
     * **Tap** = One-shot shift
     * **Hold** = sym layer
-- *mcw:*
-    * **Tap** = regular key
-    * **Double-tap** = *cw*
 
 ### **Navigation**
 ```
@@ -122,7 +120,7 @@ Provides easy access to navigation keys, as well as other useful keys. Does not 
     _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
-Moves the numbers at the top of the keyboard down to your fingers, so you don't have to reach for them. You can use *lsft* to access their symbols if you want to. Home row mods are still usable if you hold them before entering this layer making a lot of shortcuts more convenient, especially ones for switching windows.
+Moves the numbers at the top of the keyboard down to your fingers, so you don't have to reach for them. Home row mods are still usable if you hold them before entering this layer making a lot of shortcuts more convenient, especially ones for switching windows or tabs.
 
 ### **Numpad**
 ```

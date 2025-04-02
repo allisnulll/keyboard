@@ -20,7 +20,7 @@
     _         b    l    d    w    z    '    f    o    u    j    _    _    _
     @md1      @hr1 @hr2 @hr3 @hr4 g    y    @hr5 @hr6 @hr7 @hr8 @md2      @md3
     @lsf      q    x    m    c    v    k    p    _    _    _              @rsf
-    _    @mcw @mcw @md4           _              @md5 @mcw @mcw _    _    _
+    _    _    _    @md4           _              @md5 _    _    _    _    _
                                                                 _    _    _
 )
 
@@ -40,7 +40,7 @@
     _         _    _    _    _    _    _    _    _    _    _    _    _    _
     @md1      @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      @md3
     @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
-    _    @mcw @mcw @md4           _              @md5 @mcw @mcw _    _    _
+    _    _    _    @md4           _              @md5 _    _    _    _    _
                                                                 _    _    _
 )
 
@@ -150,17 +150,30 @@
 
     ~ (fork S-grv (unshift grv) (lsft rsft d k))
 
-    hrt9 (switch
+    hrk9 (switch
         ((base-layer qwerty-home-row))   ' break
         ((base-layer graphite-home-row)) ; break
     )
 
-    md1 (tap-dance $timeout (
-        (tap-hold $tap-time $hold-time esc (layer-toggle nav))
-        (layer-toggle navyt)
-    ))
+    cw  (caps-word $long-timeout)
+
+    md1 (fork
+        (tap-dance $timeout (
+            (tap-hold $tap-time $hold-time esc (layer-toggle nav))
+            (layer-toggle navyt)
+        ))
+        (multi
+            (release-key lsft)
+            (release-key rsft)
+            (release-key d)
+            (release-key k)
+            @cw
+        )
+        (lsft rsft d k)
+    )
+
     md2 (tap-dance $timeout (
-        (tap-hold $tap-time $hold-time @hrt9 (layer-toggle num))
+        (tap-hold $tap-time $hold-time @hrk9 (layer-toggle num))
         (layer-toggle num-pad)
     ))
     md3 (tap-hold $tap-time $hold-time2 _   (layer-toggle nav))
@@ -170,50 +183,47 @@
     lsf (tap-hold $tap-time $hold-time (one-shot $long-timeout lsft) (layer-toggle sym))
     rsf (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym))
 
-    cw  (caps-word $long-timeout)
-    mcw (tap-dance $timeout (_ @cw))
-
-    hrt1 (switch
+    hrk1 (switch
         ((base-layer qwerty-home-row))   a break
         ((base-layer graphite-home-row)) n break
     )
-    hrt2 (switch
+    hrk2 (switch
         ((base-layer qwerty-home-row))   s break
         ((base-layer graphite-home-row)) r break
     )
-    hrt3 (switch
+    hrk3 (switch
         ((base-layer qwerty-home-row))   d break
         ((base-layer graphite-home-row)) t break
     )
-    hrt4 (switch
+    hrk4 (switch
         ((base-layer qwerty-home-row))   f break
         ((base-layer graphite-home-row)) s break
     )
-    hrt5 (switch
+    hrk5 (switch
         ((base-layer qwerty-home-row))   j break
         ((base-layer graphite-home-row)) h break
     )
-    hrt6 (switch
+    hrk6 (switch
         ((base-layer qwerty-home-row))   k break
         ((base-layer graphite-home-row)) a break
     )
-    hrt7 (switch
+    hrk7 (switch
         ((base-layer qwerty-home-row))   l break
         ((base-layer graphite-home-row)) e break
     )
-    hrt8 (switch
+    hrk8 (switch
         ((base-layer qwerty-home-row))   ; break
         ((base-layer graphite-home-row)) i break
     )
 
-    hr1 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt1 lmet) @hrt1))
-    hr2 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt2 lalt) @hrt2))
-    hr3 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt3 lsft) @hrt3))
-    hr4 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt4 lctl) @hrt4))
-    hr5 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt5 rctl) @hrt5))
-    hr6 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt6 rsft) @hrt6))
-    hr7 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt7 ralt) @hrt7))
-    hr8 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt8 rmet) @hrt8))
+    hr1 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk1 lmet) @hrk1))
+    hr2 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk2 lalt) @hrk2))
+    hr3 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk3 lsft) @hrk3))
+    hr4 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk4 lctl) @hrk4))
+    hr5 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk5 rctl) @hrk5))
+    hr6 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk6 rsft) @hrk6))
+    hr7 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk7 ralt) @hrk7))
+    hr8 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk8 rmet) @hrk8))
 
     tb1 C-tab
     tb2 C-S-tab
