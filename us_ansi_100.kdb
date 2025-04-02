@@ -19,7 +19,7 @@
     _    b    l    d    w    z    '    f    o    u    j    _    _    _     _    _    _     _    _    _    _
     @md1 @hr1 @hr2 @hr3 @hr4 _    y    @hr5 @hr6 @hr7 @hr8 @md2      @md3                  _    _    _
     @lsf q    x    m    c    v    k    p    _    _    _              @rsf       _          _    _    _    _
-    _    @mcw @md4                 _                  @md5 @mcw _    _     _    _    _     _         _
+    _    _    @md4                 _                  @md5 _    _    _     _    _    _     _         _
 )
 
 (deflayer graphite
@@ -37,7 +37,7 @@
     _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
     @md1 @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      @md3                  _    _    _
     @lsf _    _    _    _    _    _    _    _    _    _              @rsf       _          _    _    _    _
-    _    @mcw @md4                 _                  @md5 @mcw _    _     _    _    _     _         _
+    _    _    @md4                 _                  @md5 _    _    _     _    _    _     _         _
 )
 
 (deflayermap (qwerty)
@@ -144,10 +144,23 @@
         ((base-layer graphite-home-row)) ; break
     )
 
-    md1 (tap-dance $timeout (
-        (tap-hold $tap-time $hold-time esc (layer-toggle nav))
-        (layer-toggle navyt)
-    ))
+    cw  (caps-word $long-timeout)
+
+    md1 (fork
+        (tap-dance $timeout (
+            (tap-hold $tap-time $hold-time esc (layer-toggle nav))
+            (layer-toggle navyt)
+        ))
+        (multi
+            (release-key lsft)
+            (release-key rsft)
+            (release-key d)
+            (release-key k)
+            @cw
+        )
+        (lsft rsft d k)
+    )
+
     md2 (tap-dance $timeout (
         (tap-hold $tap-time $hold-time @hrt9 (layer-toggle num))
         (layer-toggle num-pad)
@@ -158,9 +171,6 @@
 
     lsf (tap-hold $tap-time $hold-time (one-shot $long-timeout lsft) (layer-toggle sym))
     rsf (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym))
-
-    cw  (caps-word $long-timeout)
-    mcw (tap-dance $timeout (_ @cw))
 
     hrt1 (switch
         ((base-layer qwerty-home-row))   a break
