@@ -120,22 +120,28 @@
 )
 
 (defalias
+    nhr (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Homerow & Special Keys")
+    nnk (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Normal Keys")
+    ngr (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Graphite")
+    nqw (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Qwerty")
+    nrs (cmd /usr/bin/notify-send -u normal "Kanata" "Config Reloaded")
+
+    hmr (tap-dance $timeout (_ (switch 
+        ((base-layer qwerty)) (multi (layer-switch qwerty-home-row) @nhr) break
+        ((base-layer qwerty-home-row)) (multi (layer-switch qwerty) @nnk) break
+        ((base-layer graphite)) (multi (layer-switch graphite-home-row) @nhr) break
+        ((base-layer graphite-home-row)) (multi (layer-switch graphite) @nnk) break
+    )))
     lyt (tap-dance $timeout (_ (multi
         (cmd /home/allisnull/.dotfiles/scripts/graphite2qwerty.sh)
         (switch 
-            ((base-layer qwerty)) (layer-switch graphite) break
-            ((base-layer qwerty-home-row)) (layer-switch graphite-home-row) break
-            ((base-layer graphite)) (layer-switch qwerty) break
-            ((base-layer graphite-home-row)) (layer-switch qwerty-home-row) break
+            ((base-layer qwerty)) (multi (layer-switch graphite) @ngr) break
+            ((base-layer qwerty-home-row)) (multi (layer-switch graphite-home-row) @ngr) break
+            ((base-layer graphite)) (multi (layer-switch qwerty) @nqw) break
+            ((base-layer graphite-home-row)) (multi (layer-switch qwerty-home-row) @nqw) break
         )
     )))
-    hmr (tap-dance $timeout (_ (switch 
-        ((base-layer qwerty)) (layer-switch qwerty-home-row) break
-        ((base-layer qwerty-home-row)) (layer-switch qwerty) break
-        ((base-layer graphite)) (layer-switch graphite-home-row) break
-        ((base-layer graphite-home-row)) (layer-switch graphite) break
-    )))
-    rst (tap-dance $timeout (_ lrld))
+    rst (tap-dance $timeout (_ (multi lrld @nrs)))
 
     ~ (fork S-grv (unshift grv) (lsft rsft d k))
 
