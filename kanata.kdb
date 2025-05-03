@@ -30,7 +30,7 @@
     _         b    l    d    w    z    '    f    o    u    j    _    _    _
     _         n    r    t    s    g    y    h    a    e    i    ;         _
     _         q    x    m    c    v    k    p    _    _    _              _
-    _    _    _    _              _              _    _    _    _    _    _
+    _    _    _    @md4           _              @md5 _    _    _    _    _
                                                                 _    _    _
 )
 
@@ -49,6 +49,8 @@
     end  @lyt
     ins  @rst
     grv  @~
+    lalt @md4
+    ralt @md5
 )
 
 ;; NOTE: Had to move nav keys up to avoid key ghosting
@@ -183,8 +185,18 @@
         (layer-toggle num-pad)
     ))
     md3 (tap-hold $tap-time $hold-time2 _   (layer-toggle nav))
-    md4 (tap-hold $tap-time $hold-time rpt (layer-toggle fun))
-    md5 (tap-hold $tap-time $hold-time rpt (layer-toggle vim))
+    md4 (switch
+        ((or (base-layer graphite-home-row) (base-layer qwerty-home-row)))
+            (tap-hold $tap-time $hold-time rpt (layer-toggle fun)) break
+        ((or (base-layer graphite) (base-layer qwerty)))
+            (tap-hold $tap-time $hold-time rpt lalt) break
+    )
+    md5 (switch
+        ((or (base-layer graphite-home-row) (base-layer qwerty-home-row)))
+            (tap-hold $tap-time $hold-time rpt (layer-toggle vim)) break
+        ((or (base-layer graphite) (base-layer qwerty)))
+            (tap-hold $tap-time $hold-time rpt ralt) break
+    )
 
     lsf (tap-hold $tap-time $hold-time (one-shot $long-timeout lsft) (layer-toggle sym))
     rsf (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym))
