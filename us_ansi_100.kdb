@@ -27,7 +27,7 @@
     @~   _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
     _    b    l    d    w    z    '    f    o    u    j    _    _    _     _    _    _     _    _    _    _
     _    n    r    t    s    g    y    h    a    e    i    ;         _                     _    _    _
-    _    q    x    m    c    v    k    p    _    _    _              _          _          _    _    _    _
+    @lsf q    x    m    c    v    k    p    _    _    _              @rsf       _          _    _    _    _
     _    _    @md4                 _                  @md5 _    _    _     _    _    _     _         _
 )
 
@@ -45,6 +45,8 @@
     slck @lyt
     brk  @rst
     grv  @~
+    lsft @lsf
+    rsft @rsf
     lalt @md4
     ralt @md5
 )
@@ -187,8 +189,19 @@
             (tap-hold $tap-time $hold-time rpt ralt) break
     )
 
-    lsf (tap-hold $tap-time $hold-time (one-shot $long-timeout lsft) (layer-toggle sym))
-    rsf (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym))
+    lsf (switch
+        ((or (base-layer graphite-home-row) (base-layer qwerty-home-row)))
+            (tap-hold $tap-time $hold-time (one-shot $long-timeout lsft) (layer-toggle sym)) break
+        ((or (base-layer graphite) (base-layer qwerty)))
+            (one-shot $long-timeout lsft) break
+    )
+    rsf (switch
+        ((or (base-layer graphite-home-row) (base-layer qwerty-home-row)))
+            (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym)) break
+        ((or (base-layer graphite) (base-layer qwerty)))
+            (one-shot $long-timeout rsft) break
+    )
+
 
     hrt1 (switch
         ((base-layer qwerty-home-row))   a break
