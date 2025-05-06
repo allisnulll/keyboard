@@ -26,7 +26,7 @@
     _     _    _    _    _      _    _    _    _      _    _    _    _     @hmr @lyt @rst
     @~   _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
     _    b    l    d    w    z    '    f    o    u    j    _    _    _     _    _    _     _    _    _    _
-    _    n    r    t    s    g    y    h    a    e    i    ;         _                     _    _    _
+    @md1 n    r    t    s    g    y    h    a    e    i    ;         _                     _    _    _
     @lsf q    x    m    c    v    k    p    _    _    _              @rsf       _          _    _    _    _
     _    _    @md4                 _                  @md5 _    _    _     _    _    _     _         _
 )
@@ -45,6 +45,7 @@
     slck @lyt
     brk  @rst
     grv  @~
+    caps @md1 
     lsft @lsf
     rsft @rsf
     lalt @md4
@@ -157,10 +158,15 @@
     cw  (caps-word $long-timeout)
 
     md1 (fork
-        (tap-dance $timeout (
-            (tap-hold $tap-time $hold-time esc (layer-toggle nav))
-            (layer-toggle navyt)
-        ))
+        (switch
+            ((or (base-layer graphite-home-row) (base-layer qwerty-home-row)))
+                (tap-dance $timeout (
+                    (tap-hold $tap-time $hold-time esc (layer-toggle nav))
+                    (layer-toggle navyt)
+                )) break
+            ((or (base-layer graphite) (base-layer qwerty)))
+                caps break
+        )
         (multi
             (release-key lsft)
             (release-key rsft)

@@ -4,17 +4,13 @@ I decided to learn the **Graphite** keyboard layout and this is the **Kanata** c
 ## Features
 - Toggleable Qwerty Layout
 - Toggleable Home Row Mods *(using **GASC**: Meta, Alt, Shift, Ctrl)*
+- Nav, Numrow, Numpad, Symbol, and Function layers
+- One-shot shift keys
+- Caps-word key
 - Repeat keys *(never press the same key twice in a row)*
-- Always have access to `hjkl;'` or `yhaei;` keys depending on your currently selected layout
-- One-shot shift keys & dedicated caps-word key in nav layer
-- Nav layers provide easy access to useful shortcuts for browser navigation such as:
-    * **Ctrl+Tab *or* Ctrl+PgDn:** Jump to previous tab
-    * **Ctrl+Shift+Tab *or* Ctrl+PgUp:** Jump to next tab
-    * **Ctrl+Shift+PgDn:** Move tab right
-    * **Ctrl+Shift+PgUp:** Move tab left
-    * **Alt+Left:** previous page
-    * **Alt+Right:** next page
-- Changed `` ` `` to be `~` by default
+- Always have access to `hjkl;'` or `yhaei;` keys with Vim layer
+- Swapped `` ` `` and `~`
+- Custom Nav layer for video speed controller
 
 ## **Vanilla Laptop Keyboard:**
 ```
@@ -31,20 +27,20 @@ I decided to learn the **Graphite** keyboard layout and this is the **Kanata** c
 ## Layers:
 
 ### Main Layer
-Four possible main layers:
+There are four possible main layers:
 - *graphite-home-row*
 - *graphite*
 - *qwerty-home-row*
 - *qwerty*
 
-Three top-right keys are responsible for main layer switching:
+Top-right keys are responsible for main layer switching:
 - *hmr:* Double-tap to toggle home row & other special keys.
     * Toggles between *graphite-home-row* & *graphite* or *qwerty-home-row* & *qwerty*
 - *lyt:* Double-tap to toggle keyboard layout:
     * Toggles between *graphite-home-row* & *qwerty-home-row* or *graphite* & *qwerty*
 - *rst:* Double-tap to reload layout, useful for debugging.
 
-### **Graphite**
+#### **Graphite**
 ```
     _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
     @~   _    _    _    _    _    _    _    _    _    _    _    _         _
@@ -56,7 +52,7 @@ Three top-right keys are responsible for main layer switching:
 ```
 This is what I change from the vanilla layer to get the **Graphite** layout. I like to keep the symbols mostly the same as in **Qwerty**.
 
-### **Home Row**
+#### **Home Row**
 ```
     _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
     @~   _    _    _    _    _    _    _    _    _    _    _    _         _
@@ -78,7 +74,7 @@ This is what I change from the vanilla layer to get my home row mods and other c
     * **Shift-tap** = *[cw](#Navigation)*
 - *md2:*
     * **Tap** = regular key
-    * **Hold** = num layer
+    * **Hold** = numrow layer
     * **Double-tap** = numpad layer
 - *md3:*
     * **Tap** = repeat key
@@ -106,11 +102,11 @@ This is what I change from the vanilla layer to get my home row mods and other c
 Provides easy access to navigation keys, as well as other useful keys. Does not remove access to modifier keys on right side in order to allow for things like highlight or jump by word.
 - *cw:* Caps-word key to capitalize the next typed word.
 - *tb1:* **Ctrl+Tab** for easy access when changing tabs in web browser. *(tb2 in custom nav layer)*
-- Access to useful keys like enter equal and tab, as well as backspace and delete.
+- Access to useful keys like enter and tab, as well as backspace and delete.
 - Access to media keys as well as brightness keys
 - Access to some minorly useful mouse keys as well as the regular lock keys just in case.
 
-### **Num**
+### **Numrow**
 ```
     _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _         _
@@ -137,7 +133,7 @@ Numpad with some custom keys.
 - `*` shifts to `/`
 - `^` shifts to `%`
 - `.` shifts to `,`
-- *ch1-8:* Random binary chord config I found in Kanata docs that I never use.
+- *ch1-8:* Random binary chord config I found in Kanata docs that I never use but I think is cool.
 
 ### **Symbol**
 ```
@@ -224,3 +220,24 @@ alias kns="systemctl --user stop kanata"
 alias knl="systemctl --user status kanata"
 alias knr="systemctl --user daemon-reload && systemctl --user restart kanata"
 ```
+
+## Usefull Keybind Examples:
+- *Nav layer provides easy access to useful shortcuts for navigation such as*
+    * **Browser:**
+        + **Ctrl+PgUp *or* Ctrl+PgDn:** Jump to next or previous tab
+            1. Hold `j` for ctrl
+            2. Hold `CapsLock` to enter Nav
+            3. Press `f` or `t` for PgUp or PgDn
+        + **Ctrl+Shift+PgUp *or* Ctrl+Shift+PgDn:** Move tab left or right
+            1. Hold `j` for ctrl
+            2. Hold `k` for shift
+            3. Hold `CapsLock` to enter Nav
+            4. Press `f` or `t` for PgUp or PgDn
+        + **Alt+Left Alt+Right:** previous or next page
+            1. Hold `l` for alt
+            2. Hold `CapsLock` to enter Nav
+            3. Press `w` or `r` to go between pages
+        + **Ctrl+{number}:** Jump to specific tab
+            1. Hold `f` or `j` for ctrl
+            2. Hold `;` to enter Numrow
+            3. Press any middle row key in order to jump to the corresponding numbered tab
