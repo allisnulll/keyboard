@@ -132,7 +132,7 @@
     hold-time    145
     hold-time2   130
     timeout      300
-    long-timeout 3000
+    long-timeout 3250
 )
 
 (defalias
