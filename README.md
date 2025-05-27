@@ -214,8 +214,8 @@ fi m	/home/username/Music/
 - I have a few **Zsh** aliases set up for convenience:
 ```zsh
 # Kanata
-alias kn="kanata -c ~/kanata/kanata.kdb --log-layer-changes"
-alias knd="kanata -dc ~/kanata/kanata.kdb --log-layer-changes"
+alias kn="kanata -c ~/kanata/kanata.kbd --log-layer-changes"
+alias knd="kanata -dc ~/kanata/kanata.kbd --log-layer-changes"
 alias kns="systemctl --user stop kanata"
 alias knl="systemctl --user status kanata"
 alias knr="systemctl --user daemon-reload && systemctl --user restart kanata"
