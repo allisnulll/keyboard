@@ -1,18 +1,22 @@
 # My Keyboard Layout
-I decided to learn the **[Graphite](https://github.com/rdavison/graphite-layout)** layout, so this is the **[Kanata](https://github.com/jtroo/kanata)** config I ended up creating. Looking at the [configuration guide](https://jtroo.github.io/config.html#multi) I realized there was a lot more I could do than just change the positions of the letters, this is the result of that.
+I decided to learn the **[Graphite](https://github.com/rdavison/graphite-layout)** layout, so this is the **[Kanata](https://github.com/jtroo/kanata)** config I ended up creating. Looking at the [configuration guide](https://jtroo.github.io/config.html#multi) I realized there was a lot more I could do than just change the positions of the letters, so I added the following features:
 
 ## Features
-- Toggleable Qwerty Layout
-- Toggleable Special Keys & Home Row Mods
+- Home Row Mods
 - Nav, Numrow, Numpad, Symbol, and Function layers
 - One-shot shift keys
-- Caps-word key
 - Repeat keys *(never press the same key twice in a row)*
-- Always have access to `hjkl;'` or `yhaei;` keys with Vim layer
-- Swapped `` ` `` and `~`
+- Caps-word key
+- Swappable base layers for toggling features on and off
+- Access to `hjkl;'` or `yhaei;` keys with Vim layer
 - Custom Nav layer for video speed controller browser extension
+- Swapped `` ` `` and `~`
 
-## **Vanilla Laptop Keyboard:**
+## **Vanilla Thinkpad T480s Keyboard:**
+
+![thinkpad-keyboard-layout.png](assets/thinkpad-keyboard-layout.png)
+*(Swapped Fn and Ctrl in the BIOS)*
+
 ```
     esc  f1  f2  f3  f4  f5  f6  f7  f8  f9  f10  f11  f12 home end  ins  del
     grv  1    2    3    4    5    6    7    8    9    0    -    =         bspc
@@ -22,7 +26,7 @@ I decided to learn the **[Graphite](https://github.com/rdavison/graphite-layout)
     lctl wkup lmet lalt           spc            ralt prnt rctl pgup up   pgdn
                                                                 left down rght
 ```
-This is the base keyboard layout I am working with. All the layers are designed for the layout of my ***ThinkPad t480s*** laptop. The **Kanata** key names can be found [here](https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs).
+This is the base keyboard layout I am working with. All the layers are designed for the layout of the ***ThinkPad t480s*** laptop. The **Kanata** key names can be found [here](https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs).
 
 ## Base Layers:
 There are six possible base layers:
