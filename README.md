@@ -1,16 +1,17 @@
-# My Keyboard Layout
-I decided to learn the **[Graphite](https://github.com/rdavison/graphite-layout)** layout, so this is the **[Kanata](https://github.com/jtroo/kanata)** config I ended up creating. Looking at the [configuration guide](https://jtroo.github.io/config.html#multi) I realized there was a lot more I could do than just change the positions of the letters, so I added the following features:
+# My Keyboard Config
+*part of my [dotfiles](https://github.com/allisnulll/dotfiles)*
+
+I decided to learn the **[Graphite](https://github.com/rdavison/graphite-layout)** layout, so this is the **[Kanata](https://github.com/jtroo/kanata)** config I ended up creating. Looking at the [configuration guide](https://jtroo.github.io/config.html#multi) I realized there was a lot more I could do than just change the positions of the letters, so I added the following:
 
 ## Features
 - Home Row Mods
-- Nav, Numrow, Numpad, Symbol, and Function layers
+- Navigation, Numrow, Numpad, Symbol, and Function layers
 - One-shot shift keys
 - Repeat keys *(never press the same key twice in a row)*
 - Caps-word key
 - Swappable base layers for toggling features on and off
 - Access to `hjkl;'` or `yhaei;` keys with Vim layer
 - Custom Nav layer for video speed controller browser extension
-- Swapped `` ` `` and `~`
 
 ## **Vanilla Thinkpad T480s Keyboard:**
 
@@ -37,7 +38,7 @@ There are six possible base layers:
 - *graphite-home-row*
 - *qwerty-home-row*
 
-As you can see, these are all combinations of different letter layouts as well as varying amounts of custom keys. The goal of all of this is to improve the ability to keep your fingers in the home row, which is why most of the time I use *graphite-home-row*, but being able to toggle things on and off is still useful in many situations.
+These are all combinations of different letter layouts as well as varying amounts of custom keys. The goal of this is to improve the ability to keep your fingers on the home row, while still retaining all the regular functionality the regular keyboard layout provides.
 
 ### **Graphite**
 ```
@@ -46,10 +47,10 @@ As you can see, these are all combinations of different letter layouts as well a
     _         b    l    d    w    z    '    f    o    u    j    _    _    _
     _         n    r    t    s    g    y    h    a    e    i    ;         _
     _         q    x    m    c    v    k    p    _    _    _              _
-    _    _    _    _              _              _    _    _    _    _    _
+    _    _    _    _              _              _    _    rmet _    _    _
                                                                 _    _    _
 ```
-This is what I change from the vanilla layer to get the **Graphite** layout. I like to keep the symbols mostly the same as in **Qwerty**. However, I did swap `` ` `` and `~` because I find it annoying when ~ is not the default.
+This is what I change from the vanilla layer to get the **Graphite** layout. I like to keep the symbols the same as in **Qwerty**.
 
 The top-right keys are responsible for base layer switching:
 - *hmr:*
@@ -60,6 +61,10 @@ The top-right keys are responsible for base layer switching:
 - *rst:*
     * **Double-tap** = Reload Kanata, useful for debugging config file.
 
+I also added a couple minor changes:
+- Swapped `` ` `` and `~`
+- Remapped *rctl* to *rmet*
+
 ### **Special Keys**
 ```
     _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
@@ -67,7 +72,7 @@ The top-right keys are responsible for base layer switching:
     _         _    _    _    _    _    _    _    _    _    _    _    _    _
     @md1      _    _    _    _    _    _    _    _    _    _    @md2      @md3
     @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
-    _    _    _    @md4           _              @md5 _    _    _    _    _
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
                                                                 _    _    _
 ```
 This is what I change from the vanilla layer to get all of the features besides home row mods.
@@ -100,7 +105,7 @@ This is what I change from the vanilla layer to get all of the features besides 
     _         _    _    _    _    _    _    _    _    _    _    _    _    _
     @md1      @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      @md3
     @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
-    _    _    _    @md4           _              @md5 _    _    _    _    _
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
                                                                 _    _    _
 ```
 Finally, the layout is completed with the inclusion of home row mods. I am using **[GASC](https://precondition.github.io/home-row-mods#gasc)** home row mods which means the order is *Meta*, *Alt*, *Shift*, and then *Ctrl*.
@@ -110,6 +115,12 @@ Finally, the layout is completed with the inclusion of home row mods. I am using
     * **Double-tap** = regular key *(useful for regular hold key behavior when desired)*
 
 ## Sub Layers:
+A lot of layers only change one side of the keyboard allowing the other hand to hold down any desired modifiers while still inside them. This makes it look like layers which take up both sides of the keyboard cannot be combined with modifiers, this is not the case.
+
+> ***Important:*** To achieve the same effect, simply hold down modifiers before entering the layer.
+
+This combination of home row mods and layers are what truly turn this layout from requiring fingers to move to keys, to requiring fingers to press keys already moved to them.
+
 ### **Navigation**
 ```
     caps nlck slck _   _   _   _   _   _   _   _   _   _   _    _    _    _
@@ -137,7 +148,7 @@ Provides easy access to navigation keys, as well as other useful keys. Does not 
     _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
-Moves the numbers at the top of the keyboard down to your fingers, so you don't have to reach for them. Home row mods are still usable if you hold them before entering this layer making a lot of shortcuts more convenient, especially ones for switching windows or tabs, making this one of the most useful layers.
+Moves the numbers at the top of the keyboard down to your fingers, so you don't have to reach for them. This makes a lot of shortcuts more convenient, especially ones for switching windows or tabs, making this one of the most useful layers.
 
 ### **Numpad**
 ```
@@ -149,7 +160,7 @@ Moves the numbers at the top of the keyboard down to your fingers, so you don't 
     _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
-Numpad with some custom keys.
+Customized numpad, mostly used to access +, *, and ^ keys.
 - `+` shifts to `-`
 - `*` shifts to `/`
 - `^` shifts to `%`
@@ -192,7 +203,7 @@ Function layer with easy access to F11 *(fullscreen toggle)* and F13-24 while us
     _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
-A mask into the opposite layout for those six keys on the right side of the keyboard. Most useful when using **Vim Motions** while using the **Graphite** layout.
+A mask into the opposite layout for those six keys on the right side of the keyboard commonly used for **Vim Motions**. This removes a major downsides to using alternate keyboard layouts.
 - If *graphite* then `hjkl;'`
 - If *qwerty* then `yhaei;`
 
@@ -212,58 +223,6 @@ This is what I use when watching YouTube while using **Graphite** layout.
 
 ![browser-extension.avif](assets/browser-extension.avif)
 
-<<<<<<< HEAD
-## External Config
-- Whenever the layout is switched a script is run that changes the directional keymaps for my *Hyprland*, *Tmux*, and *Rofi* configs.
-    * The idea behind the script is to have a patch file generated beforehand using `git diff` that then is applied using the script to change the config.
-    * The script can be found [here](https://github.com/allisnulll/.dotfiles/blob/main/scripts/graphite2qwerty.sh).
-- *kanata.service* makes it, so you don't have to manually launch **Kanata** every system start.
-- *zippy.txt* has zippy chords for frequently used text. Mine looks something like this:
-```txt
-us 1	Username1
-us 2	Username2
-em e	email1@mail.com
-em e 2	email2@mail.com
-fi h	/home/username/
-fi d w	/home/username/Downloads/
-fi d c	/home/username/Documents/
-fi d e	/home/username/Desktop/
-fi p	/home/username/Pictures/
-fi v	/home/username/Videos/
-fi .	/home/username/.dotfiles/
-fi m	/home/username/Music/
-```
-- I have a few **Zsh** aliases set up for convenience:
-```zsh
-# Kanata
-alias kn="kanata -c ~/kanata/kanata.kbd --log-layer-changes"
-alias knd="kanata -dc ~/kanata/kanata.kbd --log-layer-changes"
-alias kns="systemctl --user stop kanata"
-alias knl="systemctl --user status kanata"
-alias knr="systemctl --user daemon-reload && systemctl --user restart kanata"
-```
-
-## Useful Keybind Examples:
-- *Nav layer provides easy access to useful shortcuts for navigation such as*
-    * **Browser:**
-        + **Ctrl+PgUp *or* Ctrl+PgDn:** Jump to next or previous tab
-            1. Hold `j` for ctrl
-            2. Hold `CapsLock` to enter Nav
-            3. Press `f` or `t` for PgUp or PgDn
-        + **Ctrl+Shift+PgUp *or* Ctrl+Shift+PgDn:** Move tab left or right
-            1. Hold `j` for ctrl
-            2. Hold `k` for shift
-            3. Hold `CapsLock` to enter Nav
-            4. Press `f` or `t` for PgUp or PgDn
-        + **Alt+Left Alt+Right:** previous or next page
-            1. Hold `l` for alt
-            2. Hold `CapsLock` to enter Nav
-            3. Press `w` or `r` to go between pages
-        + **Ctrl+{number}:** Jump to specific tab
-            1. Hold `f` or `j` for ctrl
-            2. Hold `;` to enter Numrow
-            3. Press any middle row key in order to jump to the corresponding numbered tab
-
 ## External Config
 - *kanata.service* makes it so you don't have to manually launch **Kanata** every system start.
     * On **Hyprland** add this line to reliably start the service on startup:
@@ -275,7 +234,6 @@ alias knr="systemctl --user daemon-reload && systemctl --user restart kanata"
     * Script file can be found [here](https://github.com/allisnulll/dotfiles/blob/main/scripts/graphite2qwerty.sh).
     * Patch file can be found [here](https://github.com/allisnulll/dotfiles/blob/main/patches/graphite2qwerty.patch).
 - *kanata.service* makes it so you don't have to manually launch **Kanata** every system start. *(Stopped working)*
-- I have a few **Zsh** aliases set up for convenience:
 ```zsh
 # Kanata
 alias kn="kanata -c ~/kanata/kanata.kbd --log-layer-changes"
@@ -299,3 +257,24 @@ fi v	/home/username/Videos/
 fi .	/home/username/.dotfiles/
 fi m	/home/username/Music/
 ```
+
+### Useful Keybind Examples:
+- *Nav layer provides easy access to useful shortcuts for navigation such as*
+    * **Chromium Browser:**
+        + **Ctrl+PgUp *or* Ctrl+PgDn:** Jump to next or previous tab
+            1. Hold `j` for ctrl
+            2. Hold `CapsLock` to enter Nav
+            3. Press `f` or `t` for PgUp or PgDn
+        + **Ctrl+Shift+PgUp *or* Ctrl+Shift+PgDn:** Move tab left or right
+            1. Hold `j` for ctrl
+            2. Hold `k` for shift
+            3. Hold `CapsLock` to enter Nav
+            4. Press `f` or `t` for PgUp or PgDn
+        + **Alt+Left Alt+Right:** previous or next page
+            1. Hold `l` for alt
+            2. Hold `CapsLock` to enter Nav
+            3. Press `w` or `r` to go between pages
+        + **Ctrl+{number}:** Jump to specific tab
+            1. Hold `f` or `j` for ctrl
+            2. Hold `;` to enter Numrow
+            3. Press any middle row key in order to jump to the corresponding numbered tab
