@@ -68,7 +68,6 @@
     home @hmr
     end  @lyt
     ins  @rst
-    grv  @~
 )
 
 ;; NOTE: Had to move nav keys up to avoid key ghosting
