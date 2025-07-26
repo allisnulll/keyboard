@@ -114,9 +114,9 @@
 (deflayer fun
     _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _         _
-    _         @f12 @f7  @f8  @f9  _    _    _    _    _    _    _    _    _
-    _         @f11 @f4  @f5  @f6  _    _    _    _    _    _    _         _
-    _         @f10 @f1  @f2  @f3  _    _    _    _    _    _              _
+    _         f12  f7   f8   f9   _    _    _    _    _    _    _    _    _
+    _         f11  f4   f5   f6   _    _    _    _    _    _    _         _
+    _         f10  f1   f2   f3   _    _    _    _    _    _              _
     _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 )
@@ -292,19 +292,6 @@
     + (fork kp+ kp-         (lsft rsft d k))
     ^ (fork S-6 S-5         (lsft rsft d k))
     . (fork kp. (unshift ,) (lsft rsft d k))
-
-    f1  (fork f1  f13 (lsft rsft d k))
-    f2  (fork f2  f14 (lsft rsft d k))
-    f3  (fork f3  f15 (lsft rsft d k))
-    f4  (fork f4  f16 (lsft rsft d k))
-    f5  (fork f5  f17 (lsft rsft d k))
-    f6  (fork f6  f18 (lsft rsft d k))
-    f7  (fork f7  f19 (lsft rsft d k))
-    f8  (fork f8  f20 (lsft rsft d k))
-    f9  (fork f9  f21 (lsft rsft d k))
-    f10 (fork f10 f22 (lsft rsft d k))
-    f11 (fork f11 f23 (lsft rsft d k))
-    f12 (fork f12 f24 (lsft rsft d k))
 
     lft (switch
         ((or (base-layer graphite) (base-layer graphite-home-row))) h break
