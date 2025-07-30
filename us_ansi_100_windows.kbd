@@ -22,13 +22,22 @@
     _    _    @md4                 _                  @md5 _    _    _     _    _    _     _         _
 )
 
+(deflayer graphite-no-home-row
+    _     _    _    _    _      _    _    _    _      _    _    _    _     @hmr @lyt @rst
+    @~   _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
+    _    b    l    d    w    z    '    f    o    u    j    _    _    _     _    _    _     _    _    _    _
+    @md1 n    r    t    s    g    y    h    a    e    i    @md2      @md3                  _    _    _
+    @lsf q    x    m    c    v    k    p    _    _    _              @rsf       _          _    _    _    _
+    _    _    @md4                 _                  @md5 _    _    _     _    _    _     _         _
+)
+
 (deflayer graphite
     _     _    _    _    _      _    _    _    _      _    _    _    _     @hmr @lyt @rst
     @~   _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
     _    b    l    d    w    z    '    f    o    u    j    _    _    _     _    _    _     _    _    _    _
-    @md1 n    r    t    s    g    y    h    a    e    i    ;         _                     _    _    _
-    @lsf q    x    m    c    v    k    p    _    _    _              @rsf       _          _    _    _    _
-    _    _    @md4                 _                  @md5 _    _    _     _    _    _     _         _
+    _    n    r    t    s    g    y    h    a    e    i    ;         _                     _    _    _
+    _    q    x    m    c    v    k    p    _    _    _              _          _          _    _    _    _
+    _    _    _                    _                  _    _    _    _     _    _    _     _         _
 )
 
 (deflayer qwerty-home-row
@@ -40,16 +49,19 @@
     _    _    @md4                 _                  @md5 _    _    _     _    _    _     _         _
 )
 
+(deflayer qwerty-no-home-row
+    _     _    _    _    _      _    _    _    _      _    _    _    _     @hmr @lyt @rst
+    @~   _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
+    @md1 _    _    _    _    _    _    _    _    _    _    @md2      @md3                  _    _    _
+    @lsf _    _    _    _    _    _    _    _    _    _              @rsf       _          _    _    _    _
+    _    _    @md4                 _                  @md5 _    _    _     _    _    _     _         _
+)
+
 (deflayermap (qwerty)
     prnt @hmr
     slck @lyt
     brk  @rst
-    grv  @~
-    caps @md1
-    lsft @lsf
-    rsft @rsf
-    lalt @md4
-    ralt @md5
 )
 
 ;; NOTE: Had to move nav keys up to avoid key ghosting
@@ -92,9 +104,9 @@
 (deflayer fun
     _     _    _    _    _      _    _    _    _      _    _    _    _     _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
-    _    @f12 @f7  @f8  @f9  _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
-    _    @f11 @f4  @f5  @f6  _    _    _    _    _    _    _         _                     _    _    _
-    _    @f10 @f1  @f2  @f3  _    _    _    _    _    _              _          _          _    _    _    _
+    _    f12  f7   f8   f9   _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
+    _    f11  f4   f5   f6   _    _    _    _    _    _    _         _                     _    _    _
+    _    f10  f1   f2   f3   _    _    _    _    _    _              _          _          _    _    _    _
     _    _    _                    _                  _    _    _    _     _    _    _     _         _
 )
 
@@ -119,45 +131,60 @@
 
 (defvar
     tap-time     100
-    hold-time    140
+    hold-time    145
+    hold-time2   130
     timeout      300
-    long-timeout 3000
+    long-timeout 3250
 )
 
 (defalias
-    hmr (tap-dance $timeout (_ (switch 
-        ((base-layer qwerty)) (layer-switch qwerty-home-row) break
-        ((base-layer qwerty-home-row)) (layer-switch qwerty) break
-        ((base-layer graphite)) (layer-switch graphite-home-row) break
-        ((base-layer graphite-home-row)) (layer-switch graphite) break
+    hmr (tap-dance $timeout (_ (fork
+        (switch 
+            ((base-layer graphite)) (layer-switch graphite-home-row) break
+            ((base-layer qwerty)) (layer-switch qwerty-home-row) break
+            ((base-layer graphite-no-home-row)) (layer-switch graphite-home-row) break
+            ((base-layer qwerty-no-home-row)) (layer-switch qwerty-home-row) break
+            ((base-layer graphite-home-row)) (layer-switch graphite) break
+            ((base-layer qwerty-home-row)) (layer-switch qwerty) break
+        )
+        (multi
+            (release-key lsft)
+            (release-key rsft)
+            (release-key d)
+            (release-key k)
+            (switch
+                ((or (base-layer graphite) (base-layer graphite-home-row)))
+                    (layer-switch graphite-no-home-row) break
+                ((or (base-layer qwerty) (base-layer qwerty-home-row)))
+                    (layer-switch qwerty-no-home-row) break
+            )
+        )
+        (lsft rsft d k)
     )))
     lyt (tap-dance $timeout (_ (switch 
-        ((base-layer qwerty)) (layer-switch graphite) break
-        ((base-layer qwerty-home-row)) (layer-switch graphite-home-row) break
         ((base-layer graphite)) (layer-switch qwerty) break
+        ((base-layer qwerty)) (layer-switch graphite) break
+        ((base-layer graphite-no-home-row)) (layer-switch qwerty-no-home-row) break
+        ((base-layer qwerty-no-home-row)) (layer-switch graphite-no-home-row) break
         ((base-layer graphite-home-row)) (layer-switch qwerty-home-row) break
+        ((base-layer qwerty-home-row)) (layer-switch graphite-home-row) break
     )))
     rst (tap-dance $timeout (_ lrld ))
 
     ~ (fork S-grv (unshift grv) (lsft rsft d k))
 
-    hrt9 (switch
-        ((base-layer qwerty-home-row))   ' break
+    hrk9 (switch
         ((base-layer graphite-home-row)) ; break
+        ((base-layer qwerty-home-row))   ' break
     )
 
     cw  (caps-word $long-timeout)
 
     md1 (fork
-        (switch
-            ((or (base-layer graphite-home-row) (base-layer qwerty-home-row)))
-                (tap-dance $timeout (
-                    (tap-hold $tap-time $hold-time esc (layer-toggle nav))
-                    (layer-toggle navyt)
-                )) break
-            ((or (base-layer graphite) (base-layer qwerty)))
-                caps break
-        )
+        (tap-dance $timeout (
+            (tap-hold $tap-time $hold-time esc (layer-toggle nav))
+            (layer-toggle navyt)
+        ))
         (multi
             (release-key lsft)
             (release-key rsft)
@@ -169,77 +196,57 @@
     )
 
     md2 (tap-dance $timeout (
-        (tap-hold $tap-time $hold-time @hrt9 (layer-toggle num))
+        (tap-hold $tap-time $hold-time @hrk9 (layer-toggle num))
         (layer-toggle num-pad)
     ))
-    md3 (tap-hold $tap-time $hold-time _   (layer-toggle nav))
-    md4 (switch
-        ((or (base-layer graphite-home-row) (base-layer qwerty-home-row)))
-            (tap-hold $tap-time $hold-time rpt (layer-toggle fun)) break
-        ((or (base-layer graphite) (base-layer qwerty)))
-            (tap-hold $tap-time $hold-time rpt lalt) break
-    )
-    md5 (switch
-        ((or (base-layer graphite-home-row) (base-layer qwerty-home-row)))
-            (tap-hold $tap-time $hold-time rpt (layer-toggle vim)) break
-        ((or (base-layer graphite) (base-layer qwerty)))
-            (tap-hold $tap-time $hold-time rpt ralt) break
-    )
+    md3 (tap-hold $tap-time $hold-time2 _   (layer-toggle nav))
+    md4 (tap-hold $tap-time $hold-time rpt (layer-toggle fun))
+    md5 (tap-hold $tap-time $hold-time rpt (layer-toggle vim))
 
-    lsf (switch
-        ((or (base-layer graphite-home-row) (base-layer qwerty-home-row)))
-            (tap-hold $tap-time $hold-time (one-shot $long-timeout lsft) (layer-toggle sym)) break
-        ((or (base-layer graphite) (base-layer qwerty)))
-            (one-shot $long-timeout lsft) break
-    )
-    rsf (switch
-        ((or (base-layer graphite-home-row) (base-layer qwerty-home-row)))
-            (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym)) break
-        ((or (base-layer graphite) (base-layer qwerty)))
-            (one-shot $long-timeout rsft) break
-    )
+    lsf (tap-hold $tap-time $hold-time (one-shot $long-timeout lsft) (layer-toggle sym))
+    rsf (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym))
 
-    hrt1 (switch
-        ((base-layer qwerty-home-row))   a break
+    hrk1 (switch
         ((base-layer graphite-home-row)) n break
+        ((base-layer qwerty-home-row))   a break
     )
-    hrt2 (switch
-        ((base-layer qwerty-home-row))   s break
+    hrk2 (switch
         ((base-layer graphite-home-row)) r break
+        ((base-layer qwerty-home-row))   s break
     )
-    hrt3 (switch
-        ((base-layer qwerty-home-row))   d break
+    hrk3 (switch
         ((base-layer graphite-home-row)) t break
+        ((base-layer qwerty-home-row))   d break
     )
-    hrt4 (switch
-        ((base-layer qwerty-home-row))   f break
+    hrk4 (switch
         ((base-layer graphite-home-row)) s break
+        ((base-layer qwerty-home-row))   f break
     )
-    hrt5 (switch
-        ((base-layer qwerty-home-row))   j break
+    hrk5 (switch
         ((base-layer graphite-home-row)) h break
+        ((base-layer qwerty-home-row))   j break
     )
-    hrt6 (switch
-        ((base-layer qwerty-home-row))   k break
+    hrk6 (switch
         ((base-layer graphite-home-row)) a break
+        ((base-layer qwerty-home-row))   k break
     )
-    hrt7 (switch
-        ((base-layer qwerty-home-row))   l break
+    hrk7 (switch
         ((base-layer graphite-home-row)) e break
+        ((base-layer qwerty-home-row))   l break
     )
-    hrt8 (switch
-        ((base-layer qwerty-home-row))   ; break
+    hrk8 (switch
         ((base-layer graphite-home-row)) i break
+        ((base-layer qwerty-home-row))   ; break
     )
 
-    hr1 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt1 lmet) @hrt1))
-    hr2 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt2 lalt) @hrt2))
-    hr3 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt3 lsft) @hrt3))
-    hr4 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt4 lctl) @hrt4))
-    hr5 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt5 rctl) @hrt5))
-    hr6 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt6 rsft) @hrt6))
-    hr7 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt7 ralt) @hrt7))
-    hr8 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrt8 rmet) @hrt8))
+    hr1 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk1 lmet) @hrk1))
+    hr2 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk2 lalt) @hrk2))
+    hr3 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk3 lsft) @hrk3))
+    hr4 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk4 lctl) @hrk4))
+    hr5 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk5 rctl) @hrk5))
+    hr6 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk6 rsft) @hrk6))
+    hr7 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk7 ralt) @hrk7))
+    hr8 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk8 rmet) @hrk8))
 
     tb1 C-tab
     tb2 C-S-tab
@@ -263,19 +270,6 @@
     + (fork kp+ kp-         (lsft rsft d k))
     ^ (fork S-6 S-5         (lsft rsft d k))
     . (fork kp. (unshift ,) (lsft rsft d k))
-
-    f1  (fork f1  f13 (lsft rsft d k))
-    f2  (fork f2  f14 (lsft rsft d k))
-    f3  (fork f3  f15 (lsft rsft d k))
-    f4  (fork f4  f16 (lsft rsft d k))
-    f5  (fork f5  f17 (lsft rsft d k))
-    f6  (fork f6  f18 (lsft rsft d k))
-    f7  (fork f7  f19 (lsft rsft d k))
-    f8  (fork f8  f20 (lsft rsft d k))
-    f9  (fork f9  f21 (lsft rsft d k))
-    f10 (fork f10 f22 (lsft rsft d k))
-    f11 (fork f11 f23 (lsft rsft d k))
-    f12 (fork f12 f24 (lsft rsft d k))
 
     lft (switch
         ((or (base-layer graphite) (base-layer graphite-home-row))) h break
