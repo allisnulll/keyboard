@@ -233,7 +233,7 @@
         ((base-layer qwerty-home-row))   a break
     )
     hrk2 (switch
-            ((base-layer graphite-home-row)) r break
+        ((base-layer graphite-home-row)) r break
         ((base-layer qwerty-home-row))   s break
     )
     hrk3 (switch
