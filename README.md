@@ -125,7 +125,7 @@ This combination of home row mods and layers are what truly turn this layout fro
 ```
     caps nlck slck _   _   _   _   _   _   _   _   _   _   _    _    _    _
     @cw  _    home up   end  _    _    _    _    brdn brup vold volu      mute
-    @tb1      ent  left down rght _    _    mwu  mwd  mwl  mwr  prev next pp
+    @tb1      ent  left down rght _    mwl  mwd  mwu  mwr  _    prev next pp
     _         tab  ins  pgup pgdn _    _    _    _    _    _    _         _
     _         _    _    _    _    _    _    _    _    _    _              _
     _    _    _    del            bspc           _    _    _    _    _    _
