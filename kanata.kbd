@@ -77,7 +77,7 @@
     @tb1      ent  left down rght _    mwl  mwd  mwu  mwr  _    prev next pp
     _         tab  ins  pgup pgdn _    _    _    _    _    _    _         _
     _         _    _    _    _    _    _    _    _    _    _              _
-    _    _    _    del            bspc           _    _    _    _    _    _
+    _    _    _    del            bspc           _    menu _    _    _    _
                                                                 _    _    _
 )
 

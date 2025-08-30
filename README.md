@@ -128,7 +128,7 @@ This combination of home row mods and layers are what truly turn this layout fro
     @tb1      ent  left down rght _    mwl  mwd  mwu  mwr  _    prev next pp
     _         tab  ins  pgup pgdn _    _    _    _    _    _    _         _
     _         _    _    _    _    _    _    _    _    _    _              _
-    _    _    _    del            bspc           _    _    _    _    _    _
+    _    _    _    del            bspc           _    menu _    _    _    _
                                                                 _    _    _
 ```
 Provides easy access to navigation keys, as well as other useful keys. Does not remove access to modifier keys on right side in order to allow for things like highlight or jump by word. *(Arrow keys are where they are to avoid keyboard ghosting)*
