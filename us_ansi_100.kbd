@@ -67,7 +67,7 @@
 ;; NOTE: Had to move nav keys up to avoid key ghosting
 (deflayer nav
     caps  nlck slck _    _      _    _    _    _      _    _    _    _     _    _    _
-    @cw  _    home up   end  _    _    _    _    brdn brup vold volu mute  _    _    _     _    _    _    _
+    @cw  _    home up   end  _    _    _    _    @brd @bru vold volu mute  _    _    _     _    _    _    _
     @tb1 ent  left down rght _    mwl  mwd  mwu  mwr  _    prev next pp    _    _    _     _    _    _    _
     _    tab  ins  pgup pgdn _    _    _    _    _    _    _         _                     _    _    _
     _    _    _    _    _    _    _    _    _    _    _              _          _          _    _    _    _
@@ -260,6 +260,8 @@
 
     tb1 C-tab
     tb2 C-S-tab
+    brd (fork brdn (cmd /usr/bin/hyprctl hyprsunset temperature -500) (lctl rctl f j))
+    bru (fork brup (cmd /usr/bin/hyprctl hyprsunset temperature +500) (lctl rctl f j))
 
     !  RS-1
     &  S-7
