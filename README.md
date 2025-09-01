@@ -13,7 +13,7 @@ I decided to learn the **[Graphite](https://github.com/rdavison/graphite-layout)
 - Access to `hjkl;'` or `yhaei;` keys with Vim layer
 - Custom Nav layer for video speed controller browser extension
 
-## **Vanilla Thinkpad T480s Keyboard:**
+## **Vanilla Thinkpad T480s Keyboard**:
 
 ![thinkpad-keyboard-layout.png](assets/thinkpad-keyboard-layout.png)
 *(Swapped Fn and Ctrl in the BIOS)*
@@ -53,12 +53,12 @@ These are all combinations of different letter layouts as well as varying amount
 This is what I change from the vanilla layer to get the **Graphite** layout. I like to keep the symbols the same as in **Qwerty**.
 
 The top-right keys are responsible for base layer switching:
-- *hmr:*
+- *hmr*:
     * **Double-tap** = Toggle between *graphite-home-row* & *graphite* or *qwerty-home-row* & *qwerty*
     * **Shift + Double-tap** = Enter *graphite-no-home-row* or *qwerty-no-home-row*
-- *lyt:*
+- *lyt*:
     * **Double-tap** = Toggle between *graphite-home-row* & *qwerty-home-row* or *graphite* & *qwerty* or *graphite-no-home-row* & *qwerty-no-home-row*
-- *rst:*
+- *rst*:
     * **Double-tap** = Reload Kanata, useful for debugging config file.
 
 I also added a couple minor changes:
@@ -76,25 +76,25 @@ I also added a couple minor changes:
                                                                 _    _    _
 ```
 This is what I change from the vanilla layer to get all of the features besides home row mods.
-- *md1:*
+- *md1*:
     * **Tap** = escape key
     * **Hold** = [nav layer](#Navigation)
     * **Double-tap** = [custom nav layer](#Custom-Navigation-Layer)
     * **Shift + tap** = *[cw](#Navigation)*
-- *md2:*
+- *md2*:
     * **Tap** = regular key
     * **Hold** = [numrow layer](#Numrow)
     * **Double-tap** = [numpad layer](#Numpad)
-- *md3:*
+- *md3*:
     * **Tap** = repeat key
     * **Hold** = [function layer](#Function)
-- *md4:*
+- *md4*:
     * **Tap** = repeat key
     * **Hold** = [vim layer](#Vim)
-- *md5:*
+- *md5*:
     * **Tap** = enter key
     * **Hold** = [nav layer](#Navigation)
-- *lsf & rsf:*
+- *lsf & rsf*:
     * **Tap** = One-shot shift
     * **Hold** = [sym layer](#Symbol)
 
@@ -109,7 +109,7 @@ This is what I change from the vanilla layer to get all of the features besides 
                                                                 _    _    _
 ```
 Finally, the layout is completed with the inclusion of home row mods. I am using **[GASC](https://precondition.github.io/home-row-mods#gasc)** home row mods which means the order is *Meta*, *Alt*, *Shift*, and then *Ctrl*.
-- *hr1-8:*
+- *hr1-8*:
     * **Tap** = regular key
     * **Hold** = modifier key
     * **Double-tap** = regular key *(useful for regular hold key behavior when desired)*
@@ -117,14 +117,14 @@ Finally, the layout is completed with the inclusion of home row mods. I am using
 ## Sub Layers:
 A lot of layers only change one side of the keyboard allowing the other hand to hold down any desired modifiers while still inside them. This makes it look like layers which take up both sides of the keyboard cannot be combined with modifiers, this is not the case.
 
-> ***Important:*** To achieve the same effect, simply hold down modifiers before entering the layer.
+> ***Important***: To achieve the same effect, simply hold down modifiers before entering the layer.
 
 This combination of home row mods and layers are what truly turn this layout from requiring fingers to move to keys, to requiring fingers to press keys already moved to them.
 
 ### **Navigation**
 ```
     caps nlck slck _   _   _   _   _   _   _   _   _   _   _    _    _    _
-    @cw  _    home up   end  _    _    _    _    brdn brup vold volu      mute
+    @cw  _    home up   end  _    _    _    _    @brd @bru vold volu      mute
     @tb1      ent  left down rght _    mwl  mwd  mwu  mwr  _    prev next pp
     _         tab  ins  pgup pgdn _    _    _    _    _    _    _         _
     _         _    _    _    _    _    _    _    _    _    _              _
@@ -132,8 +132,10 @@ This combination of home row mods and layers are what truly turn this layout fro
                                                                 _    _    _
 ```
 Provides easy access to navigation keys, as well as other useful keys. Does not remove access to modifier keys on right side in order to allow for things like highlight or jump by word. *(Arrow keys are where they are to avoid keyboard ghosting)*
-- *cw:* Caps-word key to capitalize the next typed word.
-- *tb1:* **Ctrl+Tab** for easy access when changing tabs in web browser. *(tb2 in [custom nav layer](#Custom-Navigation-Layer))*
+- *cw*: Caps-word key to capitalize the next typed word.
+- *tb1*: **Ctrl+Tab** for easy access when changing tabs in web browser. *(tb2 in [custom nav layer](#Custom-Navigation-Layer))*
+- *brd*: Lowers brightness. Combine with control to lower temperature.
+- *bru*: Raises brightness. Combine with control to raise temperature.
 - Access to useful keys like enter and tab, as well as backspace and delete.
 - Access to media keys as well as brightness keys
 - Access to some minorly useful mouse keys as well as the regular lock keys just in case.
@@ -165,7 +167,7 @@ Customized numpad, mostly used to access +, *, and ^ keys.
 - `*` shifts to `/`
 - `^` shifts to `%`
 - `.` shifts to `,`
-- *ch1-8:* Random binary chord config I found in Kanata docs that I never use but I think is cool.
+- *ch1-8*: Random binary chord config I found in Kanata docs that I never use but I think is cool.
 
 ### **Symbol**
 ```
@@ -178,8 +180,8 @@ Customized numpad, mostly used to access +, *, and ^ keys.
                                                                 _    _    _
 ```
 Symbol layer with access to all the bracket types by finger.
-- *op:* Opening parenthesis
-- *cp:* Closing parenthesis
+- *op*: Opening parenthesis
+- *cp*: Closing parenthesis
 
 ### **Function**
 ```
@@ -260,21 +262,21 @@ fi m	/home/username/Music/
 
 ### Useful Keybind Examples:
 - *Nav layer provides easy access to useful shortcuts for navigation such as*
-    * **Chromium Browser:**
-        + **Ctrl+PgUp *or* Ctrl+PgDn:** Jump to next or previous tab
+    * **Chromium Browser**:
+        + **Ctrl+PgUp *or* Ctrl+PgDn**: Jump to next or previous tab
             1. Hold `j` for ctrl
             2. Hold `CapsLock` to enter Nav
             3. Press `f` or `t` for PgUp or PgDn
-        + **Ctrl+Shift+PgUp *or* Ctrl+Shift+PgDn:** Move tab left or right
+        + **Ctrl+Shift+PgUp *or* Ctrl+Shift+PgDn**: Move tab left or right
             1. Hold `j` for ctrl
             2. Hold `k` for shift
             3. Hold `CapsLock` to enter Nav
             4. Press `f` or `t` for PgUp or PgDn
-        + **Alt+Left Alt+Right:** previous or next page
+        + **Alt+Left Alt+Right**: previous or next page
             1. Hold `l` for alt
             2. Hold `CapsLock` to enter Nav
             3. Press `w` or `r` to go between pages
-        + **Ctrl+{number}:** Jump to specific tab
+        + **Ctrl+{number}**: Jump to specific tab
             1. Hold `f` or `j` for ctrl
             2. Hold `;` to enter Numrow
             3. Press any middle row key in order to jump to the corresponding numbered tab
