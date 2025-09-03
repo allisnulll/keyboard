@@ -156,9 +156,9 @@ Moves the numbers at the top of the keyboard down to your fingers, so you don't 
 ```
     _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
     _    @ch8 @ch4 @ch2 @ch1 _    _    _    @ch8 @ch4 @ch2 @ch1 _         _
-    _         _    _    _    _    _    =    kp7  kp8  kp9  @+   _    _    _
-    _         _    _    _    _    _    kp0  kp4  kp5  kp6  @*   _         _
-    _         _    _    _    _    _    @.   kp1  kp2  kp3  @^             _
+    _         _    _    _    _    _    =    kp7  kp8  kp9  @n+  _    _    _
+    _         _    _    _    _    _    kp0  kp4  kp5  kp6  @n*  _         _
+    _         _    _    _    _    _    @.   kp1  kp2  kp3  @n^            _
     _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
@@ -175,7 +175,7 @@ Customized numpad, mostly used to access +, *, and ^ keys.
     _    _    _    _    _    _    _    _    _    _    _    _    _         _
     _         _    _    @~   @&   @!   @#   @|   grv  _    _    _    _    _
     _         @<   [    @{   @op  -    @_   @cp  @}   ]    @>   _         _
-    _         =    _    _    \    @@   @$   @%   _    _    =              _
+    _         =    _    @@   \    @^   @$   @%   @+   @*   =              _
     _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```

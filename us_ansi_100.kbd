@@ -79,7 +79,7 @@
     _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _     _    _    _    _
     _    _    _    @~   @&   @!   @#   @|   grv  _    _    _    _    _     _    _    _     _    _    _    _
     _    @<   [    @{   @op  -    @_   @cp  @}   ]    @>   _         _                     _    _    _
-    _    =    _    _    \    @@   @$   @%   _    _    =              _          _          _    _    _    _
+    _    =    _    @@   \    @^   @$   @%   @+   @*   =              _          _          _    _    _    _
     _    _    _                    _                  _    _    _    _     _    _    _     _         _
 )
 
@@ -95,9 +95,9 @@
 (deflayer num-pad
     _     _    _    _    _      _    _    _    _      _    _    _    _     _    _    _
     _    @ch8 @ch4 @ch2 @ch1 _    _    _    @ch8 @ch4 @ch2 @ch1 _    _     _    _    _     _    _    _    _
-    _    _    _    _    _    _    =    kp7  kp8  kp9  @+   _    _    _     _    _    _     _    _    _    _
-    _    _    _    _    _    _    kp0  kp4  kp5  kp6  @*   _         _                     _    _    _
-    _    _    _    _    _    _    @.   kp1  kp2  kp3  @^             _          _          _    _    _    _
+    _    _    _    _    _    _    =    kp7  kp8  kp9  @n+  _    _    _     _    _    _     _    _    _    _
+    _    _    _    _    _    _    kp0  kp4  kp5  kp6  @n*  _         _                     _    _    _
+    _    _    _    _    _    _    @.   kp1  kp2  kp3  @n^            _          _          _    _    _    _
     _    _    _                    _                  _    _    _    _     _    _    _     _         _
 )
 
@@ -263,25 +263,28 @@
     brd (fork brdn (cmd /usr/bin/hyprctl hyprsunset temperature -500) (lctl rctl f j))
     bru (fork brup (cmd /usr/bin/hyprctl hyprsunset temperature +500) (lctl rctl f j))
 
-    !  RS-1
+    !  S-1
+    @  S-2
+    #  S-3
+    $  S-4
+    %  S-5
+    ^  S-6
     &  S-7
-    |  S-\
-    @  RS-2
-    _  S--  
-    %  RS-5
-    #  RS-3
-    $  RS-4
-    <  S-,
-    {  S-[
+    *  S-8
     op S-9
     cp S-0
+    +  S-=
+    |  S-\
+    _  S--  
+    <  S-,
+    {  S-[
     }  S-]
     >  S-.
 
-    * (fork kp* kp/         (lsft rsft d k))
-    + (fork kp+ kp-         (lsft rsft d k))
-    ^ (fork S-6 S-5         (lsft rsft d k))
-    . (fork kp. (unshift ,) (lsft rsft d k))
+    n* (fork kp* kp/         (lsft rsft d k))
+    n+ (fork kp+ kp-         (lsft rsft d k))
+    n^ (fork S-6 S-5         (lsft rsft d k))
+    .  (fork kp. (unshift ,) (lsft rsft d k))
 
     lft (switch
         ((or (base-layer graphite) (base-layer graphite-home-row))) h break
