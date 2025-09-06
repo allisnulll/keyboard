@@ -6,20 +6,22 @@ I decided to learn the **[Graphite](https://github.com/rdavison/graphite-layout)
 ## Why Program your Keyboard?
 This is a highly overlooked part of workflow optimization. It's one thing to make every function on your computer just a few keystrokes away, but it's another to make those keystrokes physically closer to your fingers. After all, the entire point of a *Vim/Tmux/TilingWM* workflow is to minimize physical movement, right?
 
-Some try to solve this by buying expensive keyboards that feel better to type on. But it doesn't matter how nice the switches are if you still end up reaching for distant keys, straining your hands. In the end what actually ends up improving the experience the most is the reduced keys forcing you to create a layout.
+Some try to solve this by buying expensive keyboards that feel better to type on. This is cool and all, but it doesn't matter if you are still reaching for distant keys, straining your hands. In the end what actually ends up improving your experience the most is the reduced amount of physical keys forcing you to create your own keyboard layout to not lose access to extra keys.
 
-**With a well configured keyboard layout it is possible to never reach for a single key ever again!**
+***With a well configured keyboard layout it is possible to never reach for a single key ever again!***
 
 *The guiding principle is simple*: move the key to your finger, instead of moving your finger to the key.
 
-For me, Home Row Mods are the pinnacle of this philosophy. No reaching to the corner or edge of your keyboard anymore, limitless possibilities.
+For me, **Home Row Mods** are the pinnacle of this philosophy. No reaching to the corner or edge of your keyboard anymore, limitless possibilities.
 
 #### Other features that massively improve my ergonomics:
-- **Repeat Keys**: You know how ThePrimeagen uses `Vd` instead of `dd`? Do that for everything! Just put a couple of repeat keys next to your space bar, and you'll never press the same physical key twice. *(This is what really made HRM timings usable for me and has improved my typing experience overall)*
-- **Numrow Layer**: A lot of people make a numpad, but just moving the numbers up-top just two rows down instead is a real game-changer. Pair that with HMR, and you can zip to any relative line, jump between Tmux windows, workspaces, and even Chromium tabs.
+- **Repeat Keys**: You know how *ThePrimeagen* uses `Vd` instead of `dd`? Do that for everything! Just put a couple of repeat keys next to your space bar, and you'll never press the same physical key twice. *(This is what really made HRM timings usable for me and has improved my typing experience overall)*
+- **Numrow Layer**: A lot of people make a numpad, but just moving the numbers up-top just two rows down instead is a real game-changer. Pair that with *HMR*, and you can zip to any relative line, jump between *Tmux* windows, workspaces, and even *Chromium* tabs.
 - **Symbol Layer**: Do this however you want but the main thing for me is putting `<[{()}]>` directly on the home row, very intuitive.
-- **Navigation Layer**: Everybody focuses on the arrow keys, but PgUp and PgDn are underrated. They don't just scroll, they are often bound to useful shortcuts in external programs, I use it to move around tabs in Chromium all the time.
-- **Alternate Letter Layout**: I use Graphite, and honestly, it just feels better than Qwerty. My typing is smoother, more accurate, and the only real advantage Qwerty has at this point is the years of built-up muscle memory. But after half a year (started in February) using it as my main layout the gap in muscle memory has become marginal, and I can get 70-80wpm on *english10k* consistently which I couldn't on Qwerty. Here I am typing 100wpm switching layouts mid-type to prove you don't forget Qwerty if you train it a bit: https://www.youtube.com/watch?v=ocN9lPpIuj8
+- **Navigation Layer**: Everybody focuses on the arrow keys, but *PgUp* and *PgDn* are underrated. They don't just scroll, they are often bound to useful shortcuts in external programs, I use it to move around tabs in *Chromium* all the time.
+- **Alternate Letter Layout**: I use *Graphite*, and honestly, it just feels better than *Qwerty*. My typing is smoother, more accurate, and the only real advantage *Qwerty* has at this point is the years of built-up muscle memory. But after half a year (started in February) using it as my main layout, the gap in muscle memory has become marginal and I can get 70-80wpm on *english10k* consistently, which is something I couldn't do on Qwerty.
+
+    Here I am typing 100wpm switching layouts mid-type to prove you don't forget *Qwerty* if you train it a bit: https://www.youtube.com/watch?v=ocN9lPpIuj8
 
 ## Features
 - Home Row Mods
