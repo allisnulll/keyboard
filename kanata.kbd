@@ -2,6 +2,7 @@
 (defcfg
     notify-error      yes
     danger-enable-cmd yes
+    linux-dev         /dev/input/event3:/dev/input/event6
 )
 
 (defsrc
