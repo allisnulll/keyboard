@@ -1,37 +1,38 @@
 # My Keyboard Config
-*part of my [dotfiles](https://github.com/allisnulll/dotfiles)*
+*(part of my [dotfiles](https://github.com/allisnulll/dotfiles))*
 
-I decided to learn the **[Graphite](https://github.com/rdavison/graphite-layout)** layout, so this is the **[Kanata](https://github.com/jtroo/kanata)** config I ended up creating. Looking at the [configuration guide](https://jtroo.github.io/config.html#multi) I realized there was a lot more I could do than just change the positions of the letters, so I added the following:
+This is the **[Kanata](https://github.com/jtroo/kanata)** config I created while learning the **[Graphite](https://github.com/rdavison/graphite-layout)** layout. Looking at the [configuration guide](https://jtroo.github.io/config.html#multi) I realized there was a lot more I could do than just change the positions of the letters, so I added the following features:
+
+## Features
+- Home Row Mods
+- Swappable base layers for toggling features on and off
+- Navigation, Numrow, Numpad, Symbol, and Function layers
+- Access to `hjkl;'` or `yhaei;` keys with the Vim layer
+- Repeat keys *(never press the same key twice in a row)*
+- Mirror layers for when one-handed
+- One-shot shift keys
+- Caps-word key
+- Custom Nav layer for video speed controller browser extension
 
 ## Why Program your Keyboard?
 This is a highly overlooked part of workflow optimization. It's one thing to make every function on your computer just a few keystrokes away, but it's another to make those keystrokes physically closer to your fingers. After all, the entire point of a *Vim/Tmux/TilingWM* workflow is to minimize physical movement, right?
 
-Some try to solve this by buying expensive keyboards that feel better to type on. This is cool and all, but it doesn't matter if you are still reaching for distant keys, straining your hands. In the end what actually ends up improving your experience the most is the reduced amount of physical keys forcing you to create your own keyboard layout to not lose access to extra keys.
+Some try to solve this by buying expensive keyboards that feel better to type on. That's cool and all, but it doesn't matter if you're still reaching for distant keys, straining your hands. In the end what actually ends up improving your experience the most is the reduced amount of physical keys forcing you to create your own keyboard layout.
 
 ***With a well configured keyboard layout it is possible to never reach for a single key ever again!***
 
-*The guiding principle is simple*: move the key to your finger, instead of moving your finger to the key.
+*The guiding principle is simple*: move the key to your finger, instead of the finger to the key.
 
 For me, **Home Row Mods** are the pinnacle of this philosophy. No reaching to the corner or edge of your keyboard anymore, limitless possibilities.
 
 #### Other features that massively improve my ergonomics:
-- **Repeat Keys**: You know how *ThePrimeagen* uses `Vd` instead of `dd`? Do that for everything! Just put a couple of repeat keys next to your space bar, and you'll never press the same physical key twice. *(This is what really made HRM timings usable for me and has improved my typing experience overall)*
-- **Numrow Layer**: A lot of people make a numpad, but just moving the numbers up-top just two rows down instead is a real game-changer. Pair that with *HMR*, and you can zip to any relative line, jump between *Tmux* windows, workspaces, and even *Chromium* tabs.
-- **Symbol Layer**: Do this however you want but the main thing for me is putting `<[{()}]>` directly on the home row, very intuitive.
-- **Navigation Layer**: Everybody focuses on the arrow keys, but *PgUp* and *PgDn* are underrated. They don't just scroll, they are often bound to useful shortcuts in external programs, I use it to move around tabs in *Chromium* all the time.
-- **Alternate Letter Layout**: I use *Graphite*, and honestly, it just feels better than *Qwerty*. My typing is smoother, more accurate, and the only real advantage *Qwerty* has at this point is the years of built-up muscle memory. But after half a year (started in February) using it as my main layout, the gap in muscle memory has become marginal and I can get 70-80wpm on *english10k* consistently, which is something I couldn't do on Qwerty.
+- **Repeat Keys**: You know how *ThePrimeagen* uses `Vd` instead of `dd`? Do that for everything! Just put a couple of repeat keys next to your space bar, and you'll never have to press the same physical key twice in a row ever again! *(This is what really made HRM timings usable for me and has improved my typing experience overall)*
+- **Numrow Layer**: A lot of people make a numpad, but just moving the numbers up-top just two rows down instead is a real game-changer. Pair that with *HMR*, and you can zip precisely to any relative line, jump between *Tmux* windows, workspaces, and even *Chromium* tabs.
+- **Symbol Layer**: Do this however you want but the main thing for me is putting `<[{()}]>` directly on the home row, very intuitive. I am a programmer, so I like to place certain keys opposite each other such as `&` and `|`, or `^` and `$`.
+- **Navigation Layer**: Everybody focuses on the arrow keys, but *PgUp* and *PgDn* are underrated. They not only serve as an extra pair of scroll keys, but are also often bound to useful shortcuts in external programs, I use them all the time to move around tabs in *Chromium*.
+- **Alternate Letter Layout**: I use *Graphite*, and honestly, it just feels better than *Qwerty*. My typing is smoother, more accurate, and the only real advantage *Qwerty* has at this point is the years of built-up muscle memory. After half a year (at the point of writing this) using it as my main layout, the gap in muscle memory has become marginal, and I can get 70-80wpm on *english10k* consistently which is something I couldn't do on Qwerty.
 
-    Here I am typing 100wpm switching layouts mid-type to prove you don't forget *Qwerty* if you train it a bit: https://www.youtube.com/watch?v=ocN9lPpIuj8
-
-## Features
-- Home Row Mods
-- Navigation, Numrow, Numpad, Symbol, and Function layers
-- One-shot shift keys
-- Repeat keys *(never press the same key twice in a row)*
-- Caps-word key
-- Swappable base layers for toggling features on and off
-- Access to `hjkl;'` or `yhaei;` keys with Vim layer
-- Custom Nav layer for video speed controller browser extension
+    Here I am typing 100wpm switching layouts mid-type to prove you don't forget *Qwerty* if you train a bit: https://www.youtube.com/watch?v=ocN9lPpIuj8
 
 ## **Vanilla Thinkpad T480s Keyboard**:
 
@@ -81,28 +82,28 @@ The top-right keys are responsible for base layer switching:
 - *rst*:
     * **Double-tap** = Reload Kanata, useful for debugging config file.
 
-I also added a couple minor changes:
+I also add a couple minor changes:
 - Swapped `` ` `` and `~`
 - Remapped *rctl* to *rmet*
 
 ### **Special Keys**
 ```
-    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
-    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
-    _         _    _    _    _    _    _    _    _    _    _    _    _    _
+    _    _   _   _   _   _   _   _   _   _   _    _    _   _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _         _
+    @mir      _    _    _    _    _    _    _    _    _    _    _    _    @mir
     @md1      _    _    _    _    _    _    _    _    _    _    @md2      @md3
     @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
     _    _    _    @md4           _              @md5 _    rmet _    _    _
                                                                 _    _    _
 ```
-This is what I change from the vanilla layer to get all the features besides home row mods.
+This is what I change from the vanilla layer to get all the features besides home row mods:
 - *md1*:
     * **Tap** = escape key
     * **Hold** = [nav layer](#Navigation)
     * **Double-tap** = [custom nav layer](#Custom-Navigation-Layer)
     * **Shift + tap** = *[cw](#Navigation)*
 - *md2*:
-    * **Tap** = regular key
+    * **Tap** = normal key
     * **Hold** = [numrow layer](#Numrow)
     * **Double-tap** = [numpad layer](#Numpad)
 - *md3*:
@@ -117,29 +118,34 @@ This is what I change from the vanilla layer to get all the features besides hom
 - *lsf & rsf*:
     * **Tap** = One-shot shift
     * **Hold** = [sym layer](#Symbol)
+- *mir*:
+    * **Tap** = normal key
+    * **Hold** = [mirror layer](#mirror-layers)
 
-### **Home Row**
+### **Home Row Mods**
 ```
-    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
-    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _    _   _   _   _   _   _   _   _   _   _    _    _   _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _         _
     _         _    _    _    _    _    _    _    _    _    _    _    _    _
-    @md1      @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      @md3
-    @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
-    _    _    _    @md4           _              @md5 _    rmet _    _    _
+    _         @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      _
+    _         _    _    _    _    _    _    _    _    _    _              _
+    _    _    _    _              _              _    _         _    _    _
                                                                 _    _    _
 ```
-Finally, the layout is completed with the inclusion of home row mods. I am using **[GASC](https://precondition.github.io/home-row-mods#gasc)** home row mods which means the order is *Meta*, *Alt*, *Shift*, and then *Ctrl*.
+Finally, the layout is completed with the inclusion of home row mods. I am using **[GASC](https://precondition.github.io/home-row-mods#gasc)** home row mods which means the order is *Meta*, *Alt*, *Shift*, *Ctrl*:
 - *hr1-8*:
-    * **Tap** = regular key
+    * **Tap** = normal key
     * **Hold** = modifier key
-    * **Double-tap** = regular key *(useful for regular hold key behavior when desired)*
+    * **Double-tap** = normal key *(useful for regular hold key behavior when desired)*
 
 ## Sub Layers:
-A lot of layers only change one side of the keyboard allowing the other hand to hold down any desired modifiers while still inside them. This makes it look like layers which take up both sides of the keyboard cannot be combined with modifiers, this is not the case.
+The combination of home row mods and sub-layers are what truly turn this layout from requiring fingers to move to keys, to requiring fingers to press keys already moved to them.
 
-> ***Important***: To achieve the same effect, simply hold down modifiers before entering the layer.
+This is because while holding modifiers you can navigate to whatever layers you want using your other fingers making it easy to reach any keyboard shortcut imaginable.
 
-This combination of home row mods and layers are what truly turn this layout from requiring fingers to move to keys, to requiring fingers to press keys already moved to them.
+> **NOTE:** A few of the layers here only change one side of the keyboard allowing the other hand to hold down any desired modifiers while inside the layer. \
+This makes it look like layers which take up both sides of the keyboard cannot be combined with modifiers, this is not the case. \
+To achieve the same effect, simply hold down modifiers before entering the layer.
 
 ### **Navigation**
 ```
@@ -151,7 +157,8 @@ This combination of home row mods and layers are what truly turn this layout fro
     _    _    _    del            bspc           _    menu _    _    _    _
                                                                 _    _    _
 ```
-Provides easy access to navigation keys, as well as other useful keys. Does not remove access to modifier keys on right side in order to allow for things like highlight or jump by word. *(Arrow keys are where they are to avoid keyboard ghosting)*
+Provides easy access to navigation keys, as well as other useful keys.
+
 - *cw*: Caps-word key to capitalize the next typed word.
 - *tb1*: **Ctrl+Tab** for easy access when changing tabs in web browser. *(tb2 in [custom nav layer](#Custom-Navigation-Layer))*
 - *brd*: Lowers brightness. Combine with control to lower temperature.
@@ -159,6 +166,8 @@ Provides easy access to navigation keys, as well as other useful keys. Does not 
 - Access to useful keys like enter and tab, as well as backspace and delete.
 - Access to media keys as well as brightness keys
 - Access to some minorly useful mouse keys as well as the regular lock keys just in case.
+
+The arrow keys ended up there initially to avoid keyboard ghosting, but now, I have grown to like having them higher up. It feels natural to move the hand there because it is in the same position relative to the *CapsLock* button as the Home Row is to the *Shift* button. Plus you get easy access to *Tab* and the *PgUp*, *PgDn* buttons.
 
 ### **Numrow**
 ```
@@ -170,24 +179,9 @@ Provides easy access to navigation keys, as well as other useful keys. Does not 
     _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
-Moves the numbers at the top of the keyboard down to your fingers, so you don't have to reach for them. This makes a lot of shortcuts more convenient, especially ones for switching windows or tabs, making this one of the most useful layers.
+Moves the numbers at the top of the keyboard down to your fingers, so you don't have to reach for them. This makes a lot of shortcuts for moving things precisely way easier to type, making this one of the most useful layers for increasing productivity.
 
-### **Numpad**
-```
-    _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
-    _    @ch8 @ch4 @ch2 @ch1 _    _    _    @ch8 @ch4 @ch2 @ch1 _         _
-    _         _    _    _    _    _    =    kp7  kp8  kp9  @n+  _    _    _
-    _         _    _    _    _    _    kp0  kp4  kp5  kp6  @n*  _         _
-    _         _    _    _    _    _    @.   kp1  kp2  kp3  @n^            _
-    _    _    _    _              _              _    _    _    _    _    _
-                                                                _    _    _
-```
-Customized numpad, mostly used to access +, *, and ^ keys.
-- `+` shifts to `-`
-- `*` shifts to `/`
-- `^` shifts to `%`
-- `.` shifts to `,`
-- *ch1-8*: Random binary chord config I found in Kanata docs that I never use but I think is cool.
+With this layer, commands you wouldn't ordinarily do such as precisely jumping between lines in *Vim* or switching to specific tabs or workspaces now become possible to do without thinking.
 
 ### **Symbol**
 ```
@@ -199,7 +193,7 @@ Customized numpad, mostly used to access +, *, and ^ keys.
     _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
-Symbol layer with access to all the bracket types by finger.
+Symbol layer with access to all the bracket types by finger. Intuitive layout for programmers with `&` opposite `|`, and `^` opposite `$`.
 - *op*: Opening parenthesis
 - *cp*: Closing parenthesis
 
@@ -215,6 +209,31 @@ Symbol layer with access to all the bracket types by finger.
 ```
 Function layer with easy access to F11 *(fullscreen toggle)* and F13-24 while using shift.
 
+### ***Mirror Layers***
+##### Graphite
+```
+    _    _   _   _   _   _   _   _   _   _   _    _    _   _    _    _    _
+    _         _    _    _    _    _    _    _    _    _    _    _         _
+    _         j    u    o    f    '    z    w    d    l    b    _    _    _
+    _         i    e    a    h    y    g    s    t    r    n    _         _
+    _         /    .    ,    p    k    v    c    m    x    q              _
+    _    _    _    _              _              _    _    _    _    _    _
+                                                                _    _    _
+```
+
+##### Qwerty
+```
+    _    _   _   _   _   _   _   _   _   _   _    _    _   _    _    _    _
+    _         _    _    _    _    _    _    _    _    _    _    _         _
+    _         p    o    i    u    y    t    r    e    w    q    _    _    _
+    _         ;    l    k    j    h    g    f    d    s    a    _         _
+    _         /    .    ,    m    n    b    v    c    x    z              _
+    _    _    _    _              _              _    _    _    _    _    _
+                                                                _    _    _
+```
+
+Mirrors the letter so that the letters from one side can be accessed in the other. Access to special keys and **HRM** are maintained, meaning that using this layer you can do many operations one handed.
+
 ### **Vim**
 ```
     _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
@@ -225,12 +244,31 @@ Function layer with easy access to F11 *(fullscreen toggle)* and F13-24 while us
     _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
-A mask into the opposite layout for those six keys on the right side of the keyboard commonly used for **Vim Motions**. This removes a major downsides to using alternate keyboard layouts.
+A mask into the opposite layout for those six keys on the right side of the keyboard commonly used for **Vim Motions**. This removes a major downside to using alternate keyboard layouts for **Vim** users.
 - If *graphite* then `hjkl;'`
 - If *qwerty* then `yhaei;`
 
+### **Numpad**
+```
+    _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
+    _    @ch8 @ch4 @ch2 @ch1 _    _    _    @ch8 @ch4 @ch2 @ch1 _         _
+    _         _    _    _    _    _    =    kp7  kp8  kp9  @n+  _    _    _
+    _         _    _    _    _    _    kp0  kp4  kp5  kp6  @n*  _         _
+    _         _    _    _    _    _    @.   kp1  kp2  kp3  @n^            _
+    _    _    _    _              _              _    _    _    _    _    _
+                                                                _    _    _
+```
+Customized numpad:
+- `+` shifts to `-`
+- `*` shifts to `/`
+- `^` shifts to `%`
+- `.` shifts to `,`
+- *ch1-8*: Random binary chord config I found in the Kanata docs that I never use but I think is cool.
+
+I never really use this anymore ever since adding the [numrow](#Numrow) layer and updating the [symbol](#Symbol) layer
+
 ### **Custom Navigation Layer**
-*(for using Video Speed Controller Chrome extension)*
+Another mask layer for using Video Speed Controller Chromium extension
 ```
     _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _         _
@@ -240,7 +278,7 @@ A mask into the opposite layout for those six keys on the right side of the keyb
     _    _    _    _              _              _    _    _    _    _    _
                                                                 _    _    _
 ```
-This is what I use when watching YouTube while using **Graphite** layout.  
+This is what I use when watching YouTube while using a **Graphite** layout.  
 `f` key is used for fullscreen.
 
 ![browser-extension.avif](assets/browser-extension.avif)
