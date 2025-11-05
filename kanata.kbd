@@ -15,12 +15,26 @@
                                                                 left down rght
 )
 
+;;----------------------------------------------------------------------------;;
+;;                                    LAYERS                                  ;;
+;;----------------------------------------------------------------------------;;
+
 (deflayer graphite-home-row
     _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
     @~   _    _    _    _    _    _    _    _    _    _    _    _         _
-    _         b    l    d    w    z    '    f    o    u    j    _    _    _
+    @mir      b    l    d    w    z    '    f    o    u    j    _    _    @mir
     @md1      @hr1 @hr2 @hr3 @hr4 g    y    @hr5 @hr6 @hr7 @hr8 @md2      @md3
     @lsf      q    x    m    c    v    k    p    _    _    _              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer graphite-home-row-mirror
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         j    u    o    f    '    z    w    d    l    b    _    _    _
+    @md1      @hr1 @hr2 @hr3 @hr4 y    g    @hr5 @hr6 @hr7 @hr8 @md2      @md3
+    @lsf      /    .    ,    p    k    v    c    m    x    q              @rsf
     _    _    _    @md4           _              @md5 _    rmet _    _    _
                                                                 _    _    _
 )
@@ -28,9 +42,19 @@
 (deflayer graphite-no-home-row
     _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
     @~   _    _    _    _    _    _    _    _    _    _    _    _         _
-    _         b    l    d    w    z    '    f    o    u    j    _    _    _
+    @mir      b    l    d    w    z    '    f    o    u    j    _    _    @mir
     @md1      n    r    t    s    g    y    h    a    e    i    @md2      @md3
     @lsf      q    x    m    c    v    k    p    _    _    _              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer graphite-no-home-row-mirror
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         j    u    o    f    '    z    w    d    l    b    _    _    _
+    @md1      i    e    a    h    y    g    s    t    r    n    @md2      @md3
+    @lsf      /    .    ,    p    k    v    c    m    x    q              @rsf
     _    _    _    @md4           _              @md5 _    rmet _    _    _
                                                                 _    _    _
 )
@@ -48,9 +72,19 @@
 (deflayer qwerty-home-row
     _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
     @~   _    _    _    _    _    _    _    _    _    _    _    _         _
-    _         _    _    _    _    _    _    _    _    _    _    _    _    _
+    @mir      _    _    _    _    _    _    _    _    _    _    _    _    @mir
     @md1      @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      @md3
     @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer qwerty-home-row-mirror
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         p    o    i    u    y    t    r    e    w    q    _    _    _
+    @md1      @hr1 @hr2 @hr3 @hr4 h    g    @hr5 @hr6 @hr7 @hr8 @md2      @md3
+    @lsf      /    .    ,    m    n    b    v    c    x    z              @rsf
     _    _    _    @md4           _              @md5 _    rmet _    _    _
                                                                 _    _    _
 )
@@ -58,9 +92,19 @@
 (deflayer qwerty-no-home-row
     _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
     @~   _    _    _    _    _    _    _    _    _    _    _    _         _
-    _         _    _    _    _    _    _    _    _    _    _    _    _    _
+    @mir      _    _    _    _    _    _    _    _    _    _    _    _    @mir
     @md1      _    _    _    _    _    _    _    _    _    _    @md2      @md3
     @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer qwerty-no-home-row-mirror
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         p    o    i    u    y    t    r    e    w    q    _    _    _
+    @md1      ;    l    k    j    h    g    f    d    s    a    @md2      @md3
+    @lsf      /    .    ,    m    n    b    v    c    x    z              @rsf
     _    _    _    @md4           _              @md5 _    rmet _    _    _
                                                                 _    _    _
 )
@@ -142,6 +186,10 @@
                                                                 _    _    _
 )
 
+;;----------------------------------------------------------------------------;;
+;;                                    CODE                                    ;;
+;;----------------------------------------------------------------------------;;
+
 (defvar
     tap-time     100
     hold-time    145
@@ -194,12 +242,17 @@
     )))
     rst (tap-dance $timeout (_ (multi lrld @nrs)))
 
-    ~ (fork S-grv (unshift grv) (lsft rsft d k))
-
     hrk9 (switch
         ((base-layer graphite-home-row)) ; break
         ((base-layer qwerty-home-row))   ' break
     )
+
+    mir (tap-hold $tap-time $hold-time _ (switch
+        ((base-layer graphite-no-home-row)) (layer-toggle graphite-no-home-row-mirror) break
+        ((base-layer graphite-home-row)) (layer-toggle graphite-home-row-mirror) break
+        ((base-layer qwerty-no-home-row)) (layer-toggle qwerty-no-home-row-mirror) break
+        ((base-layer qwerty-home-row)) (layer-toggle qwerty-home-row-mirror) break
+    ))
 
     cw  (caps-word $long-timeout)
 
@@ -230,36 +283,52 @@
     rsf (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym))
 
     hrk1 (switch
-        ((base-layer graphite-home-row)) n break
-        ((base-layer qwerty-home-row))   a break
+        ((layer graphite-home-row-mirror)) i break
+        ((layer qwerty-home-row-mirror))   ; break
+        ((base-layer graphite-home-row))    n break
+        ((base-layer qwerty-home-row))      a break
     )
     hrk2 (switch
-        ((base-layer graphite-home-row)) r break
-        ((base-layer qwerty-home-row))   s break
+        ((layer graphite-home-row-mirror)) e break
+        ((layer qwerty-home-row-mirror))   l break
+        ((base-layer graphite-home-row))    r break
+        ((base-layer qwerty-home-row))      s break
     )
     hrk3 (switch
-        ((base-layer graphite-home-row)) t break
-        ((base-layer qwerty-home-row))   d break
+        ((layer graphite-home-row-mirror)) a break
+        ((layer qwerty-home-row-mirror))   k break
+        ((base-layer graphite-home-row))    t break
+        ((base-layer qwerty-home-row))      d break
     )
     hrk4 (switch
-        ((base-layer graphite-home-row)) s break
-        ((base-layer qwerty-home-row))   f break
+        ((layer graphite-home-row-mirror)) h break
+        ((layer qwerty-home-row-mirror))   j break
+        ((base-layer graphite-home-row))    s break
+        ((base-layer qwerty-home-row))      f break
     )
     hrk5 (switch
-        ((base-layer graphite-home-row)) h break
-        ((base-layer qwerty-home-row))   j break
+        ((layer graphite-home-row-mirror)) s break
+        ((layer qwerty-home-row-mirror))   f break
+        ((base-layer graphite-home-row))    h break
+        ((base-layer qwerty-home-row))      j break
     )
     hrk6 (switch
-        ((base-layer graphite-home-row)) a break
-        ((base-layer qwerty-home-row))   k break
+        ((layer graphite-home-row-mirror)) t break
+        ((layer qwerty-home-row-mirror))   d break
+        ((base-layer graphite-home-row))    a break
+        ((base-layer qwerty-home-row))      k break
     )
     hrk7 (switch
-        ((base-layer graphite-home-row)) e break
-        ((base-layer qwerty-home-row))   l break
+        ((layer graphite-home-row-mirror)) r break
+        ((layer qwerty-home-row-mirror))   s break
+        ((base-layer graphite-home-row))    e break
+        ((base-layer qwerty-home-row))      l break
     )
     hrk8 (switch
-        ((base-layer graphite-home-row)) i break
-        ((base-layer qwerty-home-row))   ; break
+        ((layer graphite-home-row-mirror)) n break
+        ((layer qwerty-home-row-mirror))   a break
+        ((base-layer graphite-home-row))    i break
+        ((base-layer qwerty-home-row))      ; break
     )
 
     hr1 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk1 lmet) @hrk1))
@@ -271,10 +340,13 @@
     hr7 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk7 ralt) @hrk7))
     hr8 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk8 rmet) @hrk8))
 
+    ~ (fork S-grv (unshift grv) (lsft rsft d k))
+
     tb1 C-tab
     tb2 C-S-tab
-    brd (fork brdn (cmd /usr/bin/hyprctl hyprsunset temperature -500) (lctl rctl f j))
-    bru (fork brup (cmd /usr/bin/hyprctl hyprsunset temperature +500) (lctl rctl f j))
+
+    brd (fork brdn (cmd /usr/bin/hyprctl hyprsunset temperature -250) (lctl rctl f j))
+    bru (fork brup (cmd /usr/bin/hyprctl hyprsunset temperature +250) (lctl rctl f j))
 
     !  S-1
     @  S-2
