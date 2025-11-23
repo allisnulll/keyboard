@@ -175,6 +175,16 @@
     ' @'
 )
 
+(deflayer empty
+    XX   XX  XX  XX  XX  XX  XX  XX  XX  XX  XX   XX   XX  @hmr @lyt @rst XX
+    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX        XX
+    XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+    XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX        XX
+    XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX             XX
+    XX   XX   XX   XX             XX             XX   XX   XX   XX   XX   XX
+                                                                XX   XX   XX
+)
+
 ;;----------------------------------------------------------------------------;;
 ;;                                    CODE                                    ;;
 ;;----------------------------------------------------------------------------;;
@@ -184,7 +194,12 @@
     hold-time    145
     hold-time2   130
     timeout      300
+    timeout2     500
     long-timeout 3250
+)
+
+(defvirtualkeys
+    emp (layer-toggle empty)
 )
 
 (defalias
@@ -193,31 +208,40 @@
     nnk (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Normal Keys")
     ngr (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Graphite")
     nqw (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Qwerty")
-    nrs (cmd /usr/bin/notify-send -u normal "Kanata" "Config Reloaded")
 
-    hmr (tap-dance $timeout (_ (fork
-        (switch 
-            ((base-layer graphite)) (multi (layer-switch graphite-home-row) @nhr) break
-            ((base-layer qwerty)) (multi (layer-switch qwerty-home-row) @nhr) break
-            ((base-layer graphite-no-home-row)) (multi (layer-switch graphite-home-row) @nhr) break
-            ((base-layer qwerty-no-home-row)) (multi (layer-switch qwerty-home-row) @nhr) break
-            ((base-layer graphite-home-row)) (multi (layer-switch graphite) @nnk) break
-            ((base-layer qwerty-home-row)) (multi (layer-switch qwerty) @nnk) break
+    hmr (tap-dance $timeout (
+        (switch
+            ((and (key-timing 2 less-than $timeout2) (key-history end 1) (key-history ins 2)))
+                (multi (on-press toggle-virtualkey emp) (switch
+                    ((layer empty)) (cmd /usr/bin/notify-send -u normal "Kanata" "Enabled Keyboard") break
+                    () (cmd /usr/bin/notify-send -u normal "Kanata" "Disabled Keyboard") break
+                )) break
+            () _ break
         )
-        (multi
-            (release-key lsft)
-            (release-key rsft)
-            (release-key d)
-            (release-key k)
-            (switch
-                ((or (base-layer graphite) (base-layer graphite-home-row)))
-                    (multi (layer-switch graphite-no-home-row) @nnh) break
-                ((or (base-layer qwerty) (base-layer qwerty-home-row)))
-                    (multi (layer-switch qwerty-no-home-row) @nnh) break
+        (fork
+            (switch 
+                ((base-layer graphite)) (multi (layer-switch graphite-home-row) @nhr) break
+                ((base-layer qwerty)) (multi (layer-switch qwerty-home-row) @nhr) break
+                ((base-layer graphite-no-home-row)) (multi (layer-switch graphite-home-row) @nhr) break
+                ((base-layer qwerty-no-home-row)) (multi (layer-switch qwerty-home-row) @nhr) break
+                ((base-layer graphite-home-row)) (multi (layer-switch graphite) @nnk) break
+                ((base-layer qwerty-home-row)) (multi (layer-switch qwerty) @nnk) break
             )
-        )
-        (lsft rsft d k)
-    )))
+            (multi
+                (release-key lsft)
+                (release-key rsft)
+                (release-key d)
+                (release-key k)
+                (switch
+                    ((or (base-layer graphite) (base-layer graphite-home-row)))
+                        (multi (layer-switch graphite-no-home-row) @nnh) break
+                    ((or (base-layer qwerty) (base-layer qwerty-home-row)))
+                        (multi (layer-switch qwerty-no-home-row) @nnh) break
+                )
+            )
+            (lsft rsft d k)
+        ))
+    )
     lyt (tap-dance $timeout (_ (multi
         (cmd /home/allisnull/.dotfiles/scripts/graphite2qwerty.sh)
         (switch 
@@ -229,7 +253,7 @@
             ((base-layer qwerty-home-row)) (multi (layer-switch graphite-home-row) @ngr) break
         )
     )))
-    rst (tap-dance $timeout (_ (multi lrld @nrs)))
+    rst (tap-dance $timeout (_ (multi lrld (cmd /usr/bin/notify-send -u normal "Kanata" "Config Reloaded"))))
 
     cw  (caps-word $long-timeout)
     md1 (fork
