@@ -119,7 +119,7 @@
 (deflayer nav
     caps nlck slck _   _   _   _   _   _   _   _   _   _   _    _    _    _
     @cw  _    home up   end  _    _    _    _    @brd @bru vold volu      mute
-    @tb1      ent  left down rght _    mwl  mwd  mwu  mwr  _    prev next pp
+    @tb       ent  left down rght _    mwl  mwd  mwu  mwr  _    prev next pp
     _         tab  ins  pgup pgdn _    _    _    _    _    _    _         _
     _         _    _    _    _    _    _    _    _    _    _              _
     _    _    _    del            bspc           _    menu _    _    _    _
@@ -277,8 +277,8 @@
     )
 
     hrk9 (switch
-        ((base-layer graphite-home-row)) ; break
-        ((base-layer qwerty-home-row))   ' break
+        ((layer graphite-home-row)) ; break
+        ((layer qwerty-home-row))   ' break
     )
     md2 (tap-dance $timeout (
         (tap-hold $tap-time $hold-time @hrk9 (layer-toggle num))
@@ -306,50 +306,50 @@
     hrk1 (switch
         ((layer graphite-home-row-mirror)) i break
         ((layer qwerty-home-row-mirror))   ; break
-        ((base-layer graphite-home-row))   n break
-        ((base-layer qwerty-home-row))     a break
+        ((layer graphite-home-row))   n break
+        ((layer qwerty-home-row))     a break
     )
     hrk2 (switch
         ((layer graphite-home-row-mirror)) e break
         ((layer qwerty-home-row-mirror))   l break
-        ((base-layer graphite-home-row))   r break
-        ((base-layer qwerty-home-row))     s break
+        ((layer graphite-home-row))   r break
+        ((layer qwerty-home-row))     s break
     )
     hrk3 (switch
         ((layer graphite-home-row-mirror)) a break
         ((layer qwerty-home-row-mirror))   k break
-        ((base-layer graphite-home-row))   t break
-        ((base-layer qwerty-home-row))     d break
+        ((layer graphite-home-row))   t break
+        ((layer qwerty-home-row))     d break
     )
     hrk4 (switch
         ((layer graphite-home-row-mirror)) h break
         ((layer qwerty-home-row-mirror))   j break
-        ((base-layer graphite-home-row))   s break
-        ((base-layer qwerty-home-row))     f break
+        ((layer graphite-home-row))   s break
+        ((layer qwerty-home-row))     f break
     )
     hrk5 (switch
         ((layer graphite-home-row-mirror)) s break
         ((layer qwerty-home-row-mirror))   f break
-        ((base-layer graphite-home-row))   h break
-        ((base-layer qwerty-home-row))     j break
+        ((layer graphite-home-row))   h break
+        ((layer qwerty-home-row))     j break
     )
     hrk6 (switch
         ((layer graphite-home-row-mirror)) t break
         ((layer qwerty-home-row-mirror))   d break
-        ((base-layer graphite-home-row))   a break
-        ((base-layer qwerty-home-row))     k break
+        ((layer graphite-home-row))   a break
+        ((layer qwerty-home-row))     k break
     )
     hrk7 (switch
         ((layer graphite-home-row-mirror)) r break
         ((layer qwerty-home-row-mirror))   s break
-        ((base-layer graphite-home-row))   e break
-        ((base-layer qwerty-home-row))     l break
+        ((layer graphite-home-row))   e break
+        ((layer qwerty-home-row))     l break
     )
     hrk8 (switch
         ((layer graphite-home-row-mirror)) n break
         ((layer qwerty-home-row-mirror))   a break
-        ((base-layer graphite-home-row))   i break
-        ((base-layer qwerty-home-row))     ; break
+        ((layer graphite-home-row))   i break
+        ((layer qwerty-home-row))     ; break
     )
 
     hr1 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk1 lmet) @hrk1))
@@ -362,9 +362,7 @@
     hr8 (tap-dance $timeout ((tap-hold-release $tap-time $hold-time @hrk8 rmet) @hrk8))
 
     ~ (fork S-grv (unshift grv) (lsft rsft d k))
-
-    tb1 C-tab
-    tb2 C-S-tab
+    tb C-tab
 
     brd (fork brdn (cmd /usr/bin/hyprctl hyprsunset temperature -250) (lctl rctl f j))
     bru (fork brup (cmd /usr/bin/hyprctl hyprsunset temperature +250) (lctl rctl f j))
