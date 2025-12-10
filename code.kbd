@@ -17,13 +17,16 @@
     nnk (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Normal Keys")
     ngr (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Graphite")
     nqw (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Qwerty")
+    nen (cmd /usr/bin/notify-send -u normal "Kanata" "Enabled Keyboard")
+    ndi (cmd /usr/bin/notify-send -u normal "Kanata" "Disabled Keyboard")
+    nrl (cmd /usr/bin/notify-send -u normal "Kanata" "Config Reloaded")
 
     hmr (tap-dance $timeout (
         (switch
             ((and (key-timing 2 less-than $timeout2) (key-history end 1) (key-history ins 2)))
                 (multi (on-press toggle-virtualkey emp) (switch
-                    ((layer empty)) (cmd /usr/bin/notify-send -u normal "Kanata" "Enabled Keyboard") break
-                    () (cmd /usr/bin/notify-send -u normal "Kanata" "Disabled Keyboard") break
+                    ((layer empty)) @nen break
+                    () @ndi break
                 )) break
             () _ break
         )
@@ -62,7 +65,7 @@
             ((base-layer qwerty-home-row)) (multi (layer-switch graphite-home-row) @ngr) break
         )
     )))
-    rst (tap-dance $timeout (_ (multi lrld (cmd /usr/bin/notify-send -u normal "Kanata" "Config Reloaded"))))
+    rst (tap-dance $timeout (_ (multi lrld @nrl)))
 
     cw  (caps-word $long-timeout)
     md1 (fork
@@ -222,6 +225,20 @@
     ' (switch
         ((or (base-layer graphite) (base-layer graphite-home-row))) ' break
         ((or (base-layer qwerty)   (base-layer qwerty-home-row)))   ; break
+    )
+)
+
+(platform (win winiov2 wintercept)
+    (defalias
+        ;; TODO: Figure out how to display notifications in Windows
+        nhr XX
+        nnh XX
+        nnk XX
+        ngr XX
+        nqw XX
+        nen XX
+        ndi XX
+        nrl XX
     )
 )
 
