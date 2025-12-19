@@ -1,7 +1,7 @@
 (defvar
     tap-time     100
-    hold-time    145
-    hold-time2   130
+    hold-time    150
+    hold-time2   125
     timeout      300
     timeout2     500
     long-timeout 3250
@@ -106,11 +106,11 @@
         ((base-layer qwerty-no-home-row)) (layer-toggle qwerty-no-home-row-mirror) break
         ((base-layer qwerty-home-row)) (layer-toggle qwerty-home-row-mirror) break
     )
-    lsf (tap-dance $timeout (
+    lsf (tap-dance $hold-time (
         (tap-hold $tap-time $hold-time (one-shot $long-timeout lsft) (layer-toggle sym))
         @mir
     ))
-    rsf (tap-dance $timeout (
+    rsf (tap-dance $hold-time (
         (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym))
         @mir
     ))
