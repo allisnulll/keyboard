@@ -106,11 +106,11 @@
         ((base-layer qwerty-no-home-row)) (layer-toggle qwerty-no-home-row-mirror) break
         ((base-layer qwerty-home-row)) (layer-toggle qwerty-home-row-mirror) break
     )
-    lsf (tap-dance $hold-time (
+    lsf (tap-dance $timeout (
         (tap-hold $tap-time $hold-time (one-shot $long-timeout lsft) (layer-toggle sym))
         @mir
     ))
-    rsf (tap-dance $hold-time (
+    rsf (tap-dance $timeout (
         (tap-hold $tap-time $hold-time (one-shot $long-timeout rsft) (layer-toggle sym))
         @mir
     ))
