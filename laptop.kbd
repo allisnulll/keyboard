@@ -1,0 +1,184 @@
+;; Lenovo Thinkpad t480s
+(include code.kbd)
+
+(defcfg
+    notify-error      yes
+    danger-enable-cmd yes
+    linux-dev         /dev/input/event3:/dev/input/event6
+)
+
+(defsrc
+    esc  f1  f2  f3  f4  f5  f6  f7  f8  f9  f10  f11  f12 home end  ins  del
+    grv  1    2    3    4    5    6    7    8    9    0    -    =         bspc
+    tab       q    w    e    r    t    y    u    i    o    p    [    ]    \
+    caps      a    s    d    f    g    h    j    k    l    ;    '         ent
+    lsft      z    x    c    v    b    n    m    ,    .    /              rsft
+    lctl wkup lmet lalt           spc            ralt prnt rctl pgup up   pgdn
+                                                                left down rght
+)
+
+(deflayer graphite-home-row
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         b    l    d    w    z    '    f    o    u    j    _    _    _
+    @md1      @hr1 @hr2 @hr3 @hr4 g    y    @hr5 @hr6 @hr7 @hr8 @md2      @md3
+    @lsf      q    x    m    c    v    k    p    _    _    _              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer graphite-home-row-mirror
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         j    u    o    f    '    z    w    d    l    b    _    _    _
+    @md1      @hr1 @hr2 @hr3 @hr4 y    g    @hr5 @hr6 @hr7 @hr8 @md2      @md3
+    @lsf      /    .    ,    p    k    v    c    m    x    q              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer graphite-no-home-row
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         b    l    d    w    z    '    f    o    u    j    _    _    _
+    @md1      n    r    t    s    g    y    h    a    e    i    @md2      @md3
+    @lsf      q    x    m    c    v    k    p    _    _    _              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer graphite-no-home-row-mirror
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         j    u    o    f    '    z    w    d    l    b    _    _    _
+    @md1      i    e    a    h    y    g    s    t    r    n    @md2      @md3
+    @lsf      /    .    ,    p    k    v    c    m    x    q              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer graphite
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         b    l    d    w    z    '    f    o    u    j    _    _    _
+    _         n    r    t    s    g    y    h    a    e    i    ;         _
+    _         q    x    m    c    v    k    p    _    _    _              _
+    _    _    _    _              _              _    _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer qwerty-home-row
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         _    _    _    _    _    _    _    _    _    _    _    _    _
+    @md1      @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @md2      @md3
+    @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer qwerty-home-row-mirror
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         p    o    i    u    y    t    r    e    w    q    _    _    _
+    @md1      @hr1 @hr2 @hr3 @hr4 h    g    @hr5 @hr6 @hr7 @hr8 @md2      @md3
+    @lsf      /    .    ,    m    n    b    v    c    x    z              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer qwerty-no-home-row
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         _    _    _    _    _    _    _    _    _    _    _    _    _
+    @md1      _    _    _    _    _    _    _    _    _    _    @md2      @md3
+    @lsf      _    _    _    _    _    _    _    _    _    _              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayer qwerty-no-home-row-mirror
+    _    _   _   _   _   _   _   _   _   _   _    _    _   @hmr @lyt @rst _
+    @~   _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         p    o    i    u    y    t    r    e    w    q    _    _    _
+    @md1      ;    l    k    j    h    g    f    d    s    a    @md2      @md3
+    @lsf      /    .    ,    m    n    b    v    c    x    z              @rsf
+    _    _    _    @md4           _              @md5 _    rmet _    _    _
+                                                                _    _    _
+)
+
+(deflayermap (qwerty)
+    home @hmr
+    end  @lyt
+    ins  @rst
+)
+
+;; NOTE: Had to move nav keys up to avoid key ghosting
+(deflayer nav
+    caps nlck slck _   _   _   _   _   _   _   _   _   _   _    _    _    _
+    @cw  _    home up   end  _    _    _    _    @brd @bru vold volu      mute
+    @tb       ent  left down rght _    mwl  mwd  mwu  mwr  _    prev next pp
+    _         tab  ins  pgup pgdn _    _    _    _    _    _    _         _
+    _         _    _    _    _    _    _    _    _    _    _              _
+    _    _    _    del            bspc           _    menu _    _    _    _
+                                                                _    _    _
+)
+
+(deflayer sym
+    _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         _    _    @~   @&   @!   @#   @|   grv  _    _    _    _    _
+    _         @<   [    @{   @op  -    @_   @cp  @}   ]    @>   _         _
+    _         =    _    @@   \    @^   @$   @%   @+   @*   =              _
+    _    _    _    _              _              _    _    _    _    _    _
+                                                                _    _    _
+)
+
+(deflayer num
+    _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         _    _    _    _    _    _    _    _    _    _    _    _    _
+    _         1    2    3    4    5    6    7    8    9    0    _         _
+    _         _    _    _    _    _    _    _    _    _    _              _
+    _    _    _    _              _              _    _    _    _    _    _
+                                                                _    _    _
+)
+
+(deflayer num-pad
+    _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
+    _    @ch8 @ch4 @ch2 @ch1 _    _    _    @ch8 @ch4 @ch2 @ch1 _         _
+    _         _    _    _    _    _    =    kp7  kp8  kp9  @n+  _    _    _
+    _         _    _    _    _    _    kp0  kp4  kp5  kp6  @n*  _         _
+    _         _    _    _    _    _    @.   kp1  kp2  kp3  @n^            _
+    _    _    _    _              _              _    _    _    _    _    _
+                                                                _    _    _
+)
+
+(deflayer fun
+    _    _    _    _   _   _   _   _   _   _   _   _   _   _    _    _    _
+    _    _    _    _    _    _    _    _    _    _    _    _    _         _
+    _         f12  f7   f8   f9   _    _    _    _    _    _    _    _    _
+    _         f11  f4   f5   f6   _    _    _    _    _    _    _         _
+    _         f10  f1   f2   f3   _    _    _    _    _    _              _
+    _    _    _    _              _              _    _    _    _    _    _
+                                                                _    _    _
+)
+
+(deflayermap (vim)
+    h @lft
+    j @dwn
+    k @up
+    l @rgt
+    ; @;
+    ' @'
+)
+
+(deflayer empty
+    XX   XX  XX  XX  XX  XX  XX  XX  XX  XX  XX   XX   XX  @hmr @lyt @rst XX
+    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX        XX
+    XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+    XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX        XX
+    XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX             XX
+    XX   XX   XX   XX             XX             XX   XX   XX   XX   XX   XX
+                                                                XX   XX   XX
+)
