@@ -161,11 +161,11 @@ To achieve the same effect, simply hold down modifiers before entering the layer
 ### Navigation
 ```
     caps nlck slck _   _   _   _   _   _   _   _   _   _   _    _    _    _
-    @cw  _    home up   end  _    _    _    _    @brd @bru vold volu      mute
+    @cw  menu home up   end  _    _    _    _    @brd @bru vold volu      mute
     @tb       ent  left down rght _    mwl  mwd  mwu  mwr  _    prev next pp
     _         tab  ins  pgup pgdn _    _    _    _    _    _    _         _
     _         _    _    _    _    _    _    _    _    _    _              _
-    _    _    _    del            bspc           _    menu _    _    _    _
+    _    _    _    del            bspc           _    _    _    _    _    _
                                                                 _    _    _
 ```
 Provides easy access to navigation keys, as well as other useful keys.

@@ -12,18 +12,19 @@
 )
 
 (defalias
-    nhr (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Homerow & Special Keys")
-    nnh (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Special Keys")
-    nnk (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Normal Keys")
-    ngr (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Graphite")
-    nqw (cmd /usr/bin/notify-send -u normal "Kanata" "Switched to Qwerty")
-    nen (cmd /usr/bin/notify-send -u normal "Kanata" "Enabled Keyboard")
-    ndi (cmd /usr/bin/notify-send -u normal "Kanata" "Disabled Keyboard")
-    nrl (cmd /usr/bin/notify-send -u normal "Kanata" "Config Reloaded")
+    nhr (cmd notify-send -u normal "Kanata" "Switched to Homerow & Special Keys")
+    nnh (cmd notify-send -u normal "Kanata" "Switched to Special Keys")
+    nnk (cmd notify-send -u normal "Kanata" "Switched to Normal Keys")
+    ngr (cmd notify-send -u normal "Kanata" "Switched to Graphite")
+    nqw (cmd notify-send -u normal "Kanata" "Switched to Qwerty")
+    nen (cmd notify-send -u normal "Kanata" "Enabled Keyboard")
+    ndi (cmd notify-send -u normal "Kanata" "Disabled Keyboard")
+    nrl (cmd notify-send -u normal "Kanata" "Config Reloaded")
 
     hmr (tap-dance $timeout (
         (switch
-            ((and (key-timing 2 less-than $timeout2) (key-history end 1) (key-history ins 2)))
+            ((or (and (key-timing 2 less-than $timeout2) (key-history end 1) (key-history ins 2)) ;; TODO: Figure out how to make this dependent on selected layout
+                 (and (key-timing 2 less-than $timeout2) (key-history brk 1) (key-history slck 2))))
                 (multi (on-press toggle-virtualkey emp) (switch
                     ((layer empty)) @nen break
                     () @ndi break

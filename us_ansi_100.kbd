@@ -105,11 +105,11 @@
 ;; NOTE: Had to move nav keys up to avoid key ghosting
 (deflayer nav
     caps  nlck slck _    _      _    _    _    _      _    _    _    _     _    _    _
-    @cw  _    home up   end  _    _    _    _    @brd @bru vold volu mute  _    _    _     _    _    _    _
+    @cw  menu home up   end  _    _    _    _    @brd @bru vold volu mute  _    _    _     _    _    _    _
     @tb  ent  left down rght _    mwl  mwd  mwu  mwr  _    prev next pp    _    _    _     _    _    _    _
     _    tab  ins  pgup pgdn _    _    _    _    _    _    _         _                     _    _    _
     _    _    _    _    _    _    _    _    _    _    _              _          _          _    _    _    _
-    _    _    del                  bspc               _    menu _    _     _    _    _     _         _
+    _    _    del                  bspc               _    _    _    _     _    _    _     _         _
 )
 
 (deflayer sym
@@ -158,7 +158,7 @@
 )
 
 (deflayer empty
-    XX    XX   XX   XX   XX     XX   XX   XX   XX     XX   XX   XX   XX    XX   XX   XX
+    XX    XX   XX   XX   XX     XX   XX   XX   XX     XX   XX   XX   XX    @hmr @lyt @rst
     XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX    XX   XX   XX   XX
     XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX    XX   XX   XX   XX
     XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX        XX                    XX   XX   XX
