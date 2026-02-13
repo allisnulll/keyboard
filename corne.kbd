@@ -1,0 +1,96 @@
+;; Lenovo Thinkpad t480s
+(include code.kbd)
+
+(defcfg
+    notify-error      yes
+    danger-enable-cmd yes
+)
+
+(defsrc
+    tab  q    w    e    r    t    y    u    i    o    p    [
+    caps a    s    d    f    g    h    j    k    l    ;    '
+    lsft z    x    c    v    b    n    m    ,    .    /    rsft
+         lmet lalt           spc            ralt prnt
+)
+
+;double tap nav, sym, num, or fun for mirror version
+;hyper+j swap keyboard layout
+;hyper+k toggle hrm
+;hyper+l reload config
+
+(deflayer qwerty-home-row
+    @pad _    _    _    _    _    _    _    _    _    _    @pad
+    @nvl @hr1 @hr2 @hr3 @hr4 _    _    @hr5 @hr6 @hr7 @hr8 @nvr
+    @sym _    _    _    _    _    _    _    _    _    _    @sym
+         @fun @num           _              @num @fun
+)
+
+(deflayer graphite-home-row
+    @pad b    l    d    w    z    '    f    o    u    j    @pad
+    @nvl @hr1 @hr2 @hr3 @hr4 g    y    @hr5 @hr6 @hr7 @hr8 @nvr
+    @sym q    x    m    c    v    k    p    _    _    _    @sym
+         @fun @num           _              @num @fun
+)
+
+(deflayer qwerty-no-home-row
+    @pad _    _    _    _    _    _    _    _    _    _    @pad
+    @nvl _    _    _    _    _    _    _    _    _    _    @nvr
+    @sym _    _    _    _    _    _    _    _    _    _    @sym
+         @fun @num           _              @num @fun
+)
+
+(deflayer graphite-no-home-row
+    @pad b    l    d    w    z    '    f    o    u    j    @pad
+    @nvl n    r    t    s    g    y    h    a    e    i    @nvr
+    @sym q    x    m    c    v    k    p    _    _    _    @sym
+         @fun @num           _              @num @fun
+)
+
+(deflayer nav-left
+    _    prn home up   end  _    _    @brd @bru vold volu mute
+    _    tab  left down rght _    _    caps slck prev next pp
+    _    ent  ins  pgup pgdn _    _    _    _    _    _    _
+         _    del            bspc           _    _
+)
+
+(deflayer nav-right
+    mute vold volu @brd @bru _    _    home up   end  prnt _
+    pp   next prev slck caps _    _    left down rght tab  _
+    _    _    _    _    _    _    _    pgdn pgup ins  ent  _
+         _    _              bspc           del  _
+)
+
+(deflayer sym
+    _    _    _    @~   @&   @!   @#   @|   grv  _    _    _
+    _    @<   [    @{   @op  -    @_   @cp  @}   ]    @>   _
+    _    =    _    @@   \    @^   @$   @%   @+   @*   =    _
+         _    _              _              _    _
+)
+
+(deflayer num
+    _    _    _    _    _    _    _    _    _    _    _    _
+    _    1    2    3    4    5    6    7    8    9    0    _
+    _    _    _    _    _    _    _    _    _    _    _    _
+         _    _              _              _    _
+)
+
+(deflayer fun
+    _    _    _    _    _    _    _    _    _    _    _    _
+    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+    _    _    _    _    _    _    _    _    _    _    _    _
+         _    _              _              _    _
+)
+
+(deflayer numpad-left
+    _    nlck kp7  kp8  kp9  @n+  _    _    _    _    _    _
+    _    kp0  kp4  kp5  kp6  @n*  _    _    _    _    _    _
+    _    @.   kp1  kp2  kp3  @n^  _    _    _    _    _    _
+         _    _              _              _    _
+)
+
+(deflayer numpad-right
+    _    _    _    _    _    _    nlck kp7  kp8  kp9  @n+  _
+    _    _    _    _    _    _    kp0  kp4  kp5  kp6  @n*  _
+    _    _    _    _    _    _    @.   kp1  kp2  kp3  @n^  _
+         _    _              _              _    _
+)
