@@ -4,6 +4,7 @@
 (defcfg
     notify-error      yes
     danger-enable-cmd yes
+    linux-dev         /dev/input/by-id/usb-Wooting_Wooting_Two_HE__AVR__A02B2130W041H00832-if01-event-kbd:/dev/input/by-id/usb-Wooting_Wooting_Two_HE__AVR__A02B2130W041H00832-event-if03
 )
 
 (defsrc
