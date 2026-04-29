@@ -9,20 +9,20 @@ This is the **[Kanata](https://github.com/jtroo/kanata)** config I created while
 - *Navigation*, *Numrow*, *Numpad*, *Symbol*, and *Function* layers
 - Access to `hjkl;'` or `yhaei;` keys with the *Vim* layer
 - Repeat keys *(never press the same key twice in a row)*
-- One-shot shift keys
-- Caps-word key
+- [*One-shot*](https://jtroo.github.io/config.html#one-shot) shift keys
+- [*Caps-word*](https://jtroo.github.io/config.html#caps-word) key
 - Mirror layers for when one-handed
 - Opposite layout mask for when too lazy to switch base layer
-- Ability to disable keyboard for whatever reason
+- Ability to temporarily disable keyboard for whatever reason
 
 ## Why Program your Keyboard?
 This is a highly overlooked part of workflow optimization. It's one thing to make every function on your computer just a few keystrokes away, but it's another to make those keystrokes physically closer to your fingers. After all the entire point of a **Vim/Tmux/TilingWM** workflow is to minimize physical movement, right?
 
 Some try to solve this by buying expensive keyboards that feel better to type on. That's cool and all, but it doesn't matter if you're still reaching for distant keys, straining your hands. In the end what actually ends up improving your experience the most is the reduced amount of physical keys forcing you to create your own keyboard layout.
 
-***With a well configured keyboard layout it is possible to never reach for a single key ever again!***
+**With a well configured keyboard layout it is possible to never reach for a single key ever again!**
 
-*The guiding principle is simple*: move the key to your finger, instead of the finger to the key.
+*The guiding principle is simple*: move the key to the finger, instead of the finger to the key.
 
 #### Features that massively improve my ergonomics:
 - **Home Row Mods**: For me **HRM**s are the pinnacle of this philosophy. No reaching to the corner or edge of your keyboard anymore, limitless possibilities.
@@ -95,7 +95,7 @@ If you tap *rst* then *lyt* and then *hmr* fast enough you will get the *empty* 
 ```
 This is what I change from the vanilla layer to get a Graphite layout. I like to keep the symbols the same as in *Qwerty*.
 
-I also add a couple minor changes:
+I also added a couple minor changes:
 - Swapped `` ` `` and `~`
 - Remapped `rctl` to `rmet`
 
@@ -143,7 +143,7 @@ This is what I change from the vanilla layer to get all the features besides hom
     _    _    _    _              _              _    _         _    _    _
                                                                 _    _    _
 ```
-Finally, the layout is completed with the inclusion of home row mods. I am using **[GASC](https://precondition.github.io/home-row-mods#gasc)** home row mods which means the order is Meta, Alt, Shift, Ctrl:
+Finally, the layout is completed with the inclusion of home row mods. I am using **[GASC](https://precondition.github.io/home-row-mods#gasc)** home row mods which means the order is *Meta*, *Alt*, *Shift*, *Ctrl*:
 - *hr1-8*:
     - **Tap** = normal key
     - **Hold** = modifier key
@@ -243,7 +243,9 @@ Function layer with easy access to *F11* *(fullscreen toggle)* and *F13-24* whil
                                                                 _    _    _
 ```
 
-Mirrors the letter so that the letters from one side can be accessed in the other. Access to special keys and **HRM**s are maintained, meaning that using this layer you can do many operations one-handed.
+*(This is for advanced users)*
+
+Mirrors the order of the letters so that you can type one-handed. Access to special keys and **HRM**s are maintained, meaning that using this layer one can do many things besides just typing.
 
 ### Vim
 ```
@@ -274,16 +276,16 @@ Customized numpad:
 - `*` shifts to `/`
 - `^` shifts to `%`
 - `.` shifts to `,`
-- *ch1-8*: Random binary chord config I found in the **Kanata** docs that I never use, but I think is cool.
+- *ch1-8*: Random binary chord keys I found in the **Kanata** docs that I never use, but I think are cool.
 
 I never really use this anymore ever since adding the [numrow layer](#numrow) and updating the [symbol layer](#symbol)
 
 ## External Config
 - *kanata.service* makes it so you don't have to manually launch **Kanata** every system start.
     - On **Hyprland** add this line to reliably start the service on startup:
-    ```hyprlang
-    exec-once = systemctl --user start kanata.service
-    ```
+        ```hyprlang
+        exec-once = systemctl --user start kanata.service
+        ```
 - Whenever the layout is switched a script is run that changes the directional keymaps for my **Hyprland**, **Tmux**, and **Rofi** configs.
     - The idea behind the script is to have a patch file generated beforehand using `git diff` that is then applied by the script.
     - Script file can be found [here](https://github.com/allisnulll/dotfiles/blob/main/scripts/graphite2qwerty.sh).
