@@ -177,9 +177,6 @@
     ~ (fork S-grv (unshift grv) (lsft rsft d k))
     tb C-tab
 
-    brd (fork brdn (cmd /usr/bin/hyprctl hyprsunset temperature -250) (lctl rctl f j))
-    bru (fork brup (cmd /usr/bin/hyprctl hyprsunset temperature +250) (lctl rctl f j))
-
     !  S-1
     @  S-2
     #  S-3

@@ -161,7 +161,7 @@ To achieve the same effect, simply hold down modifiers before entering the layer
 ### Navigation
 ```
     caps nlck slck _   _   _   _   _   _   _   _   _   _   _    _    _    _
-    @cw  menu home up   end  _    _    _    _    @brd @bru vold volu      mute
+    @cw  menu home up   end  _    _    _    _    brdn brup vold volu      mute
     @tb       ent  left down rght _    mwl  mwd  mwu  mwr  _    prev next pp
     _         tab  ins  pgup pgdn _    _    _    _    _    _    _         _
     _         _    _    _    _    _    _    _    _    _    _              _
@@ -172,8 +172,6 @@ Provides easy access to navigation keys, as well as other useful keys.
 
 - *cw*: Caps-word key to capitalize the next typed word.
 - *tb*: `Ctrl+Tab` macro for when changing tabs in web browser.
-- *brd*: Lowers brightness. Combine with control to lower temperature.
-- *bru*: Raises brightness. Combine with control to raise temperature.
 - Access to useful keys like enter and tab, as well as backspace and delete.
 - Access to media keys as well as brightness keys
 - Access to some minorly useful mouse keys as well as the regular lock keys just in case.
